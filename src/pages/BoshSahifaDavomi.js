@@ -145,7 +145,7 @@ export default class BoshSahifaDavomi extends Component {
                 <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
                   A'lochilar doskasi
                 </h1>
-
+<div className={style.line}></div>
                 <Container className={style.back}>
                   {/* <div className={style.line}></div> */}
                   <br />
@@ -233,6 +233,8 @@ export default class BoshSahifaDavomi extends Component {
                 <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
                   O'qituvchilar doskasi
                 </h1>
+<div className={style.line}></div>
+
                 <Container className={style.back}>
                   {/* <div className={style.line}></div> */}
                   <br />

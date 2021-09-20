@@ -27,7 +27,7 @@ background-size: 100%;
   margin-top: 10px;
   font-weight: 900;
   font-size: 1.8rem;
-  color: #2939ab;
+  color: #43ab29;
   letter-spacing: 1px;
 }
 
@@ -59,7 +59,7 @@ background-size: 100%;
 }
 
 .formFER input {
-    background: #cbeeff85;
+    background: #cdffbc85;
     padding: 10px;
     padding-left: 20px;
     height: 50px;
@@ -84,7 +84,7 @@ background-size: 100%;
   
 .formFER button {
   margin-top: 20px;
-  background: #0a95cae0;
+  background: #3aca0ae0;
   height: 40px;
   border-radius: 20px;
   cursor: pointer;

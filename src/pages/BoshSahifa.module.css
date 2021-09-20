@@ -195,6 +195,9 @@ margin-top: -80px;
 .colNews{
     padding: 10px;
     height: 120px;
+    border-bottom:2px solid green;
+    margin-bottom:10px;
+    position:relative
 }
 .colNews .rasm{
     width: 100%;
@@ -208,7 +211,9 @@ margin-top: -80px;
     font-size: 1.1rem;
     letter-spacing: -1px;
     font-weight: 600;
-    margin-top: 10px;
+   position: absolute;
+   bottom:0px;
+   left: 10px;
     color: grey;
 }
 .colNews p{
@@ -279,7 +284,7 @@ margin-top: -80px;
 
 .buttoncha {
     border-radius: 4px;
-    background-color: #5ca1e1;
+    background-color: #3adf10;
     border: none;
     color: #fff;
     font-weight: bold;

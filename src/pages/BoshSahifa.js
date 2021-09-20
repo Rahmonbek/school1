@@ -429,6 +429,8 @@ export default class BoshSahifa extends Component {
                                     paddingRight: "8px",
                                   }}
                                 >
+                                                  <Link to={`/yangiliklar/`}>
+
                                   <p>{item.title}</p>
                                   <h5>
                                     <i
@@ -437,6 +439,7 @@ export default class BoshSahifa extends Component {
                                     ></i>
                                     {item.published_time.substring(0, 10)}
                                   </h5>
+                                  </Link>
                                 </Col>
                               </Row>
                             </Col>
@@ -447,7 +450,7 @@ export default class BoshSahifa extends Component {
                       </Row>
                     </Col>
                   </Row>
-
+<br/>
                   <Link to={`/yangiliklar/`}>
                     <button className={style.buttoncha}>
                       <span>Barchasini o'qish</span>
