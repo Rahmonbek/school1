@@ -19,12 +19,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #1b6602;
+    color: #051da2;
     background-color: white !important;
   }
   .ahref:hover {
     color: white;
-    background-color: #1b6602 !important;
+    background-color: #051da2 !important;
   }
   
   

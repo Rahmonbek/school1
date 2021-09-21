@@ -9,12 +9,12 @@
 }
 .container h2 {
   padding-bottom: 20px;
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid blue;
   margin-bottom: 20px;
 }
 .sarlavha {
   padding-bottom: 20px;
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid blue;
   color: rgba(0, 0, 0, 0.85) !important;
   margin-bottom: 20px;
   font-size: 2.1rem;
@@ -88,7 +88,7 @@
 .map p {
   font-weight: bold;
   font-size: 1.4rem;
-  border-bottom: 4px solid green;
+  border-bottom: 4px solid blue;
   padding-bottom: 5px;
 }
 .map h3 {
@@ -200,7 +200,7 @@
   }
   .map p {
     font-size: 1.4rem;
-    border-bottom: 4px solid green;
+    border-bottom: 4px solid blue;
     padding-bottom: 5px;
   }
   .map h3 {
@@ -231,7 +231,7 @@
   }
   .map p {
     font-size: 1.2rem;
-    border-bottom: 4px solid green;
+    border-bottom: 4px solid blue;
     padding-bottom: 5px;
   }
   .map h3 {
@@ -246,7 +246,7 @@
   text-decoration: none;
   position: absolute;
   margin-top: 10px;
-  color: darkgreen;
+  color: darkblue;
   font-weight: bold;
   font-size: 1.5rem;
 }

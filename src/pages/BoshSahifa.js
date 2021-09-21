@@ -264,6 +264,46 @@ export default class BoshSahifa extends Component {
              </Row></Container><div className={style.di}></div>
         
 </div>
+<div className={style.navG} 
+data-aos="fade-bottom"
+     data-aos-anchor-placement="bottom-top"
+     >
+<Navbar style={{position:"relative"}}expand="lg">
+ 
+<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+            <div class={style.brand_text}>
+               <p>{this.state.school.school_number} - maktab</p>
+               </div>
+            </NavLink></Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{zIndex:345}} />
+    <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="me-auto" className={style.navT_nav}>
+      <NavLink className={style.navLik} to={`/`}>
+                    <span className={style.lik}>Bosh sahifa</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/hayot/`}>
+                    <span className={style.lik}>Maktab hayoti</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/qabul/`}>
+                    <span className={style.lik}>Qabul</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                    <span className={style.lik}>Yangiliklar</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                    <span className={style.lik}>Maktab ma'muriyati</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/alochilar/`}>
+                    <span className={style.lik}>Maktab a'lochilari</span>
+                  </NavLink>
+              
+        
+      </Nav>
+    </Navbar.Collapse>
+
+</Navbar>
+</div>
+
        
             {/* <div className="oq"></div> */}
             <div className={style.container}>
@@ -300,12 +340,12 @@ export default class BoshSahifa extends Component {
            
              </Col>
              <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha}>
+             <div className={style.containercha} style={{marginTop:'-10px'}}>
                   <img
                     src={
                       this.state.school !== null
-                        ? this.state.school.b_c2 !== null
-                          ? this.state.school.b_c2
+                        ? this.state.school.b_c3 !== null
+                          ? this.state.school.b_c3
                           : rasm2
                         : rasm2
                     }
@@ -313,9 +353,9 @@ export default class BoshSahifa extends Component {
                   />
                   <div className={style.overlay}>
                       <h3> 
-                   Yangiliklar<br/> <p>
-                        Maktabimizga doir bo'lgan yangiliklardan xabardor
-                        bo'ling
+                      Yutuqlarimiz<br/> <p>
+                      Sizda bizning maktabimiz yoshlari erishgan yutuqlari bilan tanishib chiqish
+                      uchun qulay imkoniyat bor
                       </p></h3>
                      
                    
@@ -334,8 +374,8 @@ export default class BoshSahifa extends Component {
                   <img
                     src={
                       this.state.school !== null
-                        ? this.state.school.b_c2 !== null
-                          ? this.state.school.b_c2
+                        ? this.state.school.b_c1 !== null
+                          ? this.state.school.b_c1
                           : rasm2
                         : rasm2
                     }
@@ -343,9 +383,9 @@ export default class BoshSahifa extends Component {
                   />
                   <div className={style.overlay}>
                       <h3> 
-                   Yangiliklar<br/> <p>
-                        Maktabimizga doir bo'lgan yangiliklardan xabardor
-                        bo'ling
+                   Fotolavhalar<br/> <p>
+                   Endi siz maktabimizning fotolavhalarini ko'rishingiz
+                        mumkin
                       </p></h3>
                      
                    
