@@ -101,7 +101,7 @@ export default class App extends Component {
               </Route>
 
               <Route exact path="/hayot/">
-                <NavBar />
+                {/* <NavBar /> */}
                 <MaktabHayoti />
                 <Footer />
               </Route>

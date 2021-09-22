@@ -33,7 +33,11 @@ z-index: 4567;
 .lik:hover{
     color:rgb(3, 24, 143) !important;
  }
- .navG{background-color:#051da2; width:100%; z-index: 3456; padding:10px; display: flex; align-items:center; justify-content: center; position:fixed; top:0px;}
+ .navG{ background:linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99));
+    width:100%; 
+    z-index: 3456; padding:10px;
+     display: flex; align-items:center; 
+     justify-content: center; position:fixed; top:0px;}
  .navG .birinchi{margin-left: 30%;}
 .navLik{position: relative; top: -18px;}
 .brand_text p{font-size: 27px; color:gold; font-weight:bold; position: relative; top:15px;text-shadow: 1px 1px 2px black, 0 0 3px black, 0 0 10px lightgrey;}
@@ -331,4 +335,17 @@ margin-top: -80px;
 .buttoncha:hover:after {
     opacity: 1;
     right: 10px;
+}
+@media (max-width:700px){
+    .head_textCol{margin-top: -150px;}
+    .head_textCol a{width:250px; display:block; text-align: center; margin:auto}
+.container{margin-top: -20px;}
+/* .navG{justify-content: space-between !important;} */
+.jkr{      background:linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99));
+    position: absolute; top:50px; left:0px; z-index: 456; width:100%;}
+.nlik{margin-bottom:25px; padding-left: 0px; text-align: center;}
+.lik{ font-size: 20px; margin-left: 0px; }
+.htr{ 
+margin-top:40px; margin-left: 0px;}
+.navLik{width:100%; padding-bottom:20px; display: block; text-align: center;}
 }

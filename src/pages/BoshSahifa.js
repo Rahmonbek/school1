@@ -8,12 +8,13 @@ import {
   faSignInAlt,
   faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import React, { Component } from "react";
 import { ContainerDashboard, XushKelibsiz } from "./StyleBoshSahifa";
-import style from "./BoshSahifa.module.css";
 import { Button, Container, Nav, Navbar, Row, Col } from "react-bootstrap";
 import { NavbarContainer } from "./StyleBoshSahifa";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import rasm1 from "../img/vasily-koloda-8CqDvPuo_kI-unsplash.jpg";
 import rasm2 from "../img/mira-kireeva-xTq26wLo5do-unsplash.jpg";
 import rasm3 from "../img/javier-trueba-iQPr1XkF5F0-unsplash.jpg";
@@ -32,6 +33,7 @@ import bg2t from "../img/bg2t.jpg";
 import bg3t from "../img/bg3t.jpg";
 import "../App.css";
 import { Tooltip, Carousel } from "antd";
+import style from "./BoshSahifa.module.css";
 import { Link, NavLink } from "react-router-dom";
 import BoshSahifaDavomi from "./BoshSahifaDavomi";
 import MaktabTadbirlari from "./MaktabTadbirlari";
@@ -215,25 +217,25 @@ export default class BoshSahifa extends Component {
                 <div className={style.navT}>
                 <Navbar expand="lg">
   <Container className={style.navT_item}>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none'}} />
-    <Navbar.Collapse id="basic-navbar-nav" >
+    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
+    <Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
       <Nav className="me-auto" className={style.navT_nav}>
-      <NavLink to={`/`}>
+      <NavLink className={style.nlik} to={`/`}>
                     <span className={style.lik}>Bosh sahifa</span>
                   </NavLink>
-                  <NavLink to={`/hayot/`}>
+                  <NavLink className={style.nlik} to={`/hayot/`}>
                     <span className={style.lik}>Maktab hayoti</span>
                   </NavLink>
-                  <NavLink to={`/qabul/`}>
+                  <NavLink className={style.nlik} to={`/qabul/`}>
                     <span className={style.lik}>Qabul</span>
                   </NavLink>
-                  <NavLink to={`/yangiliklar/`}>
+                  <NavLink className={style.nlik} to={`/yangiliklar/`}>
                     <span className={style.lik}>Yangiliklar</span>
                   </NavLink>
-                  <NavLink to={`/rahbariyat/`}>
+                  <NavLink className={style.nlik} to={`/rahbariyat/`}>
                     <span className={style.lik}>Maktab ma'muriyati</span>
                   </NavLink>
-                  <NavLink to={`/alochilar/`}>
+                  <NavLink className={style.nlik} to={`/alochilar/`}>
                     <span className={style.lik}>Maktab a'lochilari</span>
                   </NavLink>
               
@@ -275,8 +277,9 @@ data-aos="fade-bottom"
                <p>{this.state.school.school_number} - maktab</p>
                </div>
             </NavLink></Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{zIndex:345}} />
-    <Navbar.Collapse id="basic-navbar-nav">
+    <Navbar.Toggle aria-controls="basic-navbar-nav"
+     style={{zIndex:345, borderColor:'white'}} />
+    <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
     <Nav className="me-auto" className={style.navT_nav}>
       <NavLink className={style.navLik} to={`/`}>
                     <span className={style.lik}>Bosh sahifa</span>

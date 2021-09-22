@@ -17,11 +17,30 @@ import school10 from "../img/school10.jpg";
 import school11 from "../img/school11.jpg";
 import school12 from "../img/school12.jpg";
 import school13 from "../img/school13.jpg";
-import { Link } from "react-router-dom";
+import { Tooltip} from "antd";
+import style from "./BoshSahifa.module.css";
+import { Link, NavLink } from "react-router-dom";
+import { Button,Nav, Navbar,} from "react-bootstrap";
+
+
+// import { Link } from "react-router-dom";
 import { DownCircleOutlined } from "@ant-design/icons";
 import { BiStop, BiRightArrowAlt } from "react-icons/bi";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import {
+  faDoorOpen,
+  faEnvelope,
+  faNewspaper,
+  faPhone,
+  faSchool,
+  faSearch,
+  faSignInAlt,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { FadeLoader } from "react-spinners";
 import axios from "axios";
 
@@ -62,71 +81,190 @@ export default class MaktabHayoti extends Component {
           </div>
         ) : (
           <>
-            <div className={styles.headerSliderText}>
-              <h3 style={{ fontFamily: "font", fontWeight: "900" }}>
-                Maktab hayoti
-              </h3>
-              <div className={styles.headerIcons}>
-                <a href="#1">
-                  <DownCircleOutlined
-                    style={{ fontSize: "40px", color: "white" }}
-                    className={styles.headerIcon}
-                  />
+        
+        <div className="iconsHead">
+              <div>
+                <Tooltip placement="left" title="ittower01@gmail.com">
+                  {" "}
+                  <a
+                    target="_blank"
+                    style={{ borderRadius: "10px 0px 0px 0px" }}
+                    className="ahref"
+                    href={`mailto: ${
+                      this.state.data !== null
+                        ? this.state.data.email
+                        : "ittower01@gmail.com"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      style={{ fontSize: "25px" }}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href="https://t.me/samarqand_33_maktab"
+                >
+                  <i className="fab fa-telegram"></i>
                 </a>
               </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href="https://www.instagram.com/33_maktab_official/"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+                >
+                  <i className="fab fa-facebook"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+              <div>
+                <Tooltip placement="left" title="+998 93 082 03 72">
+                  {" "}
+                  <a
+                    target="_blank"
+                    className="ahref"
+                    style={{
+                      borderTop: " 1px solid #1b6602",
+                      borderRadius: "0px 0px 0px 10px",
+                    }}
+                    href={`tel: ${
+                      this.state.data !== null
+                        ? this.state.data.phone
+                        : "+998 93 082 03 72"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      style={{
+                        fontSize: "25px",
+                        borderRadius: "0px 0px 0px 10px",
+                      }}
+                    />
+                  </a>{" "}
+                </Tooltip>
+              </div>
             </div>
-            <Carousel autoplay className={styles.sliderHeader}>
-              <div>
-                <Image
-                  src={
-                    data !== null && data.m_h_h1 !== null
-                      ? data.m_h_h1
-                      : school1
-                  }
-                  className={styles.headerImage}
-                />
-              </div>
-              <div>
-                <Image
-                  src={
-                    data !== null && data.m_h_h2 !== null
+            <div className={style.header}>
+                <div className={style.navT}>
+                <Navbar expand="lg">
+  <Container className={style.navT_item}>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
+    <Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
+      <Nav className="me-auto" className={style.navT_nav}>
+      <NavLink className={style.nlik} to={`/`}>
+                    <span className={style.lik}>Bosh sahifa</span>
+                  </NavLink>
+                  <NavLink className={style.nlik} to={`/hayot/`}>
+                    <span className={style.lik}>Maktab hayoti</span>
+                  </NavLink>
+                  <NavLink className={style.nlik} to={`/qabul/`}>
+                    <span className={style.lik}>Qabul</span>
+                  </NavLink>
+                  <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                    <span className={style.lik}>Yangiliklar</span>
+                  </NavLink>
+                  <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                    <span className={style.lik}>Maktab ma'muriyati</span>
+                  </NavLink>
+                  <NavLink className={style.nlik} to={`/alochilar/`}>
+                    <span className={style.lik}>Maktab a'lochilari</span>
+                  </NavLink>
+              
+        
+      </Nav>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+</div>
+<Container><Row>
+             <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+                 {/* <p>Sifat va qulay narxlar</p> */}
+                 <h1>Maktabimiz hayoti bilan tanishing.</h1>
+
+                 <a target="_blank" href={`tel: ${this.state.data.tel}`}>Biz bilan bog'laning</a>
+             </Col>
+             <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+             <div className={style.head_img}>
+           
+             <div className={style.comp}>
+
+              <img src={   data !== null && data.m_h_h1 !== null
                       ? data.m_h_h2
-                      : school1
-                  }
-                  className={styles.headerImage}
-                />
-              </div>
-              <div>
-                <Image
-                  src={
-                    data !== null && data.m_h_h3 !== null
-                      ? data.m_h_h3
-                      : school3
-                  }
-                  className={styles.headerImage}
-                />
-              </div>
-              <div>
-                <Image
-                  src={
-                    data !== null && data.m_h_h4 !== null
-                      ? data.m_h_h4
-                      : school4
-                  }
-                  className={styles.headerImage}
-                />
-              </div>
-              <div>
-                <Image
-                  src={
-                    data !== null && data.m_h_h5 !== null
-                      ? data.m_h_h5
-                      : school5
-                  }
-                  className={styles.headerImage}
-                />
-              </div>
-            </Carousel>
+                      : school1}/>
+                  
+       
+              </div> 
+             </div>
+             </Col>
+             </Row></Container><div className={style.di}></div>
+        
+</div>
+<div className={style.navG} 
+data-aos="fade-bottom"
+     data-aos-anchor-placement="bottom-top"
+     >
+<Navbar style={{position:"relative"}}expand="lg">
+ 
+<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+            <div class={style.brand_text}>
+               <p>{this.state.data.school_number} - maktab</p>
+               </div>
+            </NavLink></Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav"
+     style={{zIndex:345, borderColor:'white'}} />
+    <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+    <Nav className="me-auto" className={style.navT_nav}>
+      <NavLink className={style.navLik} to={`/`}>
+                    <span className={style.lik}>Bosh sahifa</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/hayot/`}>
+                    <span className={style.lik}>Maktab hayoti</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/qabul/`}>
+                    <span className={style.lik}>Qabul</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                    <span className={style.lik}>Yangiliklar</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                    <span className={style.lik}>Maktab ma'muriyati</span>
+                  </NavLink>
+                  <NavLink className={style.navLik} to={`/alochilar/`}>
+                    <span className={style.lik}>Maktab a'lochilari</span>
+                  </NavLink>
+              
+        
+      </Nav>
+    </Navbar.Collapse>
+
+</Navbar>
+</div>
 
             <Container fluid className={styles.secondContainer} id="1">
               <Row>
@@ -412,7 +550,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -461,7 +599,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -512,7 +650,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -561,7 +699,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -610,7 +748,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -660,7 +798,7 @@ export default class MaktabHayoti extends Component {
                       />
                       <div
                         style={{
-                          backgroundColor: "#0F4C81",
+                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
                           marginTop: "30px",
                           padding: "10%",
                           height: "380px",
@@ -711,7 +849,7 @@ export default class MaktabHayoti extends Component {
                       md={6}
                       sm={12}
                       className={styles.director}
-                      style={{ backgroundColor: "#0F4C81", padding: "10%" }}
+                      style={{  background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))', padding: "10%" }}
                     >
                       <p>
                         {data.m_h_o !== null && data !== null
@@ -730,6 +868,7 @@ export default class MaktabHayoti extends Component {
                 </Col>
               </Row>
             </Container>
+            
           </>
         )}
       </div>
