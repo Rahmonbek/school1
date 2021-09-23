@@ -3,7 +3,7 @@
     height: auto;
     padding: 6%;
     position: relative;
-    background-color: lightsteelblue;
+    background:linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99));
     margin-bottom: 5%;
     margin-top: 5%;
 }

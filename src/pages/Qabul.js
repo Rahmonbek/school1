@@ -57,7 +57,7 @@ class Qabul extends React.Component {
   }
   render() {
     return (
-      <div className={styles.body_makatab}>
+      <div>
         {this.state.loader ? (
           <div className="loaderT">
             <FadeLoader color="blue" loading={this.state.loader} size={120} />
@@ -187,17 +187,17 @@ class Qabul extends React.Component {
 <Container><Row>
          <Col lg={5} md={5} sm={12} className={style.head_textCol}>
              {/* <p>Sifat va qulay narxlar</p> */}
-             <h1>Maktabimiz hayoti bilan tanishing.</h1>
+             <h1>Qabul uchun ariza topshiring</h1>
 
-             <a target="_blank" href={`tel: ${this.state.school.tel}`}>Biz bilan bog'laning</a>
+             <a target="_blank" href={`tel: ${this.state.school.phone}`}>Biz bilan bog'laning</a>
          </Col>
          <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
          <div className={style.head_img}>
        
          <div className={style.comp}>
 
-          <img src={ this.state.school !== null && this.state.school.m_h_h1 !== null
-                  ? this.state.school.m_h_h2
+          <img src={ this.state.school !== null && this.state.school.m_h_h3 !== null
+                  ? this.state.school.m_h_h3
                   : school1}/>
               
    
@@ -247,7 +247,7 @@ data-aos="fade-bottom"
 
 </Navbar>
 </div>
-
+<div  className={styles.body_makatab}>
        <div className={styles.dark_maktab}>
             <div className={styles.tavsilotlar}>
               <Container fluid style={{ padding: "0" }}>
@@ -273,7 +273,7 @@ data-aos="fade-bottom"
                   </Col>
                   <Col
                     style={{ padding: "0" }}
-                    lg={8}
+                    lg={7}
                     md={12}
                     sm={12}
                     className={styles.tavsilottext}
@@ -302,7 +302,7 @@ data-aos="fade-bottom"
                         <Image src="https://image.flaticon.com/icons/png/512/906/906175.png" />
                       </div>
                       <h3>Ta'lim shakli</h3>
-                      <p>
+                      <p style={{fontSize:'20px', marginTop:'20px'}}>
                         {this.state.school !== null
                           ? this.state.school.q_talim !== null
                             ? this.state.school.q_talim
@@ -318,7 +318,7 @@ data-aos="fade-bottom"
                         <Image src="https://image.flaticon.com/icons/png/512/3829/3829933.png" />
                       </div>
                       <h3>Bitiruvchilar</h3>
-                      <p>
+                      <p style={{fontSize:'20px', marginTop:'20px'}}>
                         {this.state.school !== null
                           ? this.state.school.q_bitiruv !== null
                             ? this.state.school.q_bitiruv
@@ -335,7 +335,7 @@ data-aos="fade-bottom"
                         <Image src="https://image.flaticon.com/icons/png/512/950/950145.png" />
                       </div>
                       <h3>O'quvchilar</h3>
-                      <p>
+                      <p style={{fontSize:'20px', marginTop:'20px'}}>
                         {this.state.school !== null
                           ? this.state.school.q_oquvchi !== null
                             ? this.state.school.q_oquvchi
@@ -548,7 +548,7 @@ data-aos="fade-bottom"
               <div className={styles.hujjat}>
                 <div className={styles.hujjat_text} data-aos="fade-right">
                   <h3>Kerakli hujjatlar</h3>
-                  <p>
+                  <p style={{fontSize:'20px'}}>
                     <b>1.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t1 !== null
@@ -557,7 +557,7 @@ data-aos="fade-bottom"
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* O‘quvchining tug‘ilganligi haqida guvohnoma (pdf-10Mb oshmagan holatda). */}
                   </p>
-                  <p>
+                  <p style={{fontSize:'20px'}}>
                     <b>2.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t2 !== null
@@ -566,7 +566,7 @@ data-aos="fade-bottom"
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* 2019-2020 o‘quv yilini “4”va “5” baholarga bitirganligini tasdiqlovchi o‘quvchining tabeli. Maktab direktori tomonidan tasdiqlangan bo‘lishi kerak (pdf-10Mb oshmagan holatda). */}
                   </p>
-                  <p>
+                  <p style={{fontSize:'20px'}}>
                     <b>3.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t3 !== null
@@ -575,7 +575,8 @@ data-aos="fade-bottom"
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* 3/4 Rasm (jpg/png/jpeg-formatida). */}
                   </p>
-                  <p>
+                  <p style={{fontSize:'20px'}}>
+                    <b>Manzil:</b>
                     {this.state.school !== null
                       ? this.state.school.address !== null
                         ? this.state.school.address
@@ -586,7 +587,7 @@ data-aos="fade-bottom"
                 </div>
               </div>
             </Container>
-          </div>
+            </div></div>
           </> )}
       </div>
   

@@ -209,14 +209,14 @@ export default class MaktabHayoti extends Component {
                  {/* <p>Sifat va qulay narxlar</p> */}
                  <h1>Maktabimiz hayoti bilan tanishing.</h1>
 
-                 <a target="_blank" href={`tel: ${this.state.data.tel}`}>Biz bilan bog'laning</a>
+                 <a target="_blank" href={`tel: ${this.state.data.phone}`}>Biz bilan bog'laning</a>
              </Col>
              <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
              <div className={style.head_img}>
            
              <div className={style.comp}>
 
-              <img src={   data !== null && data.m_h_h1 !== null
+              <img src={   data !== null && data.m_h_h2 !== null
                       ? data.m_h_h2
                       : school1}/>
                   

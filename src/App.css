@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 body {
   width: 100%;
@@ -11,6 +11,7 @@ body {
 * {
   box-sizing: border-box;
   /* z-index: 3445; */
+  font-family: 'Open Sans', sans-serif;
 }
 .load {
   width: 100%;

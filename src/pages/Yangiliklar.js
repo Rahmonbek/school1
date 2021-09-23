@@ -21,10 +21,32 @@ import {
 } from "mdb-react-ui-kit";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { url, user } from "../host/Host";
+
+// import { Link } from "react-router-dom";
 import { getNews } from "../host/Config";
 import FadeLoader from "react-spinners/FadeLoader";
 import { Carousel } from "antd";
+import { Link, NavLink } from "react-router-dom";
+import { Button,Nav, Navbar,} from "react-bootstrap";
+import { Tooltip} from "antd";
+import school1 from "../img/school1.jpg";
+import {
+  faDoorOpen,
+  faEnvelope,
+  faNewspaper,
+  faPhone,
+  faSchool,
+  faSearch,
+  faSignInAlt,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import style from './BoshSahifa.module.css'
+
 
 // import {DownCircleOutlined} from '@ant-design/icons'
 
@@ -33,6 +55,17 @@ export default class Yangiliklar extends Component {
     news: [],
     id: 0,
     loader: true,
+    school: null,
+  };
+  getSchool = () => {
+    var v = user;
+    axios.get(`${url}/school-by-admin/${v}`).then((res) => {
+      this.setState({
+        school: res.data,
+        loader: false,
+      });
+
+    });
   };
 
   getNews = () => {
@@ -41,7 +74,7 @@ export default class Yangiliklar extends Component {
         if (window.location.href.indexOf("id=") === -1) {
           this.setState({
             news: res.data,
-            loader: false,
+         
           });
         } else {
           this.setState({
@@ -49,7 +82,7 @@ export default class Yangiliklar extends Component {
             id: window.location.href.slice(
               window.location.href.indexOf("=") + 1
             ),
-            loader: false,
+          
           });
         }
       })
@@ -57,8 +90,9 @@ export default class Yangiliklar extends Component {
         console.log(err);
 
         this.setState({
-          loader: false,
+        
         });
+
       });
   };
   componentDidMount() {
@@ -66,6 +100,7 @@ export default class Yangiliklar extends Component {
       duration: 2000,
     });
     this.getNews();
+    this.getSchool();
   }
 
   // onclick_new=(link)=>{
@@ -88,51 +123,192 @@ export default class Yangiliklar extends Component {
           </div>
         ) : (
           <>
-            {/* ============Header============== */}
-
-            <div
-              className={styles.headerSliderText}
-              style={{
-                fontFamily: "Lobster",
-                zIndex: "100",
-                paddingTop: "60px",
-              }}
+ <div className="iconsHead">
+          <div>
+            <Tooltip placement="left" title="ittower01@gmail.com">
+              {" "}
+              <a
+                target="_blank"
+                style={{ borderRadius: "10px 0px 0px 0px" }}
+                className="ahref"
+                href={`mailto: ${
+                  this.state.school !== null
+                    ? this.state.school.email
+                    : "ittower01@gmail.com"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  style={{ fontSize: "25px" }}
+                />
+              </a>
+            </Tooltip>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://t.me/samarqand_33_maktab"
             >
-              <h3 style={{ fontFamily: "Lobster", zIndex: "100" }}>
-                Maktabimiz so'nggi yangiliklari bilan tanishing
-              </h3>
-            </div>
+              <i className="fab fa-telegram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.instagram.com/33_maktab_official/"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+            >
+              <i className="fab fa-facebook"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+          </div>
+          <div>
+            <Tooltip placement="left" title="+998 93 082 03 72">
+              {" "}
+              <a
+                target="_blank"
+                className="ahref"
+                style={{
+                  borderTop: " 1px solid #1b6602",
+                  borderRadius: "0px 0px 0px 10px",
+                }}
+                href={`tel: ${
+                  this.state.school !== null
+                    ? this.state.school.phone
+                    : "+998 93 082 03 72"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  style={{
+                    fontSize: "25px",
+                    borderRadius: "0px 0px 0px 10px",
+                  }}
+                />
+              </a>{" "}
+            </Tooltip>
+          </div>
+        </div>
+        <div className={style.header}>
+            <div className={style.navT}>
+            <Navbar expand="lg">
+<Container className={style.navT_item}>
+<Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
+  <Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.nlik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+</Container>
+</Navbar>
+</div>
+<Container><Row>
+         <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+             {/* <p>Sifat va qulay narxlar</p> */}
+             <h1>Maktabimizdagi so'ngi yangiliklar bilan tanishing.</h1>
 
-            <Carousel autoplay className={styles.sliderContainer}>
-              {/* {
-                            this.state.news.map(item=>{
-                              return(
-                                <div>
-                                <img src={item.image} style={{width:'100%', height:'100vh',zIndex:'-100'}} className={styles.headerImage}/> 
-                                             
-                                </div>
-                                
-                              )
-                            })
-                          } */}
-              <div className={styles.sliderIMG}>
-                <img src={new1} />
-              </div>
-              <div className={styles.sliderIMG}>
-                <img src={new2} />
-              </div>
-              <div className={styles.sliderIMG}>
-                <img src={new3} />
-              </div>
-              <div className={styles.sliderIMG}>
-                <img src={new4} />
-              </div>
-            </Carousel>
-            {/* ==================Section===================== */}
+             <a target="_blank" href={`tel: ${ this.state.school !== null
+                    ? this.state.school.phone:'#'}`}>Biz bilan bog'laning</a>
+         </Col>
+         <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+         <div className={style.head_img}>
+       
+         <div className={style.comp}>
 
-            <Container fluid>
+          <img src={ this.state.school !== null && this.state.school.m_h_h4 !== null
+                  ? this.state.school.m_h_h4
+                  : school1}/>
+              
+   
+          </div> 
+         </div>
+         </Col>
+         </Row></Container><div className={style.di} style={{zIndex:'2'}}></div>
+    
+</div>
+<div className={style.navG} 
+data-aos="fade-bottom"
+ data-aos-anchor-placement="bottom-top"
+ >
+<Navbar style={{position:"relative"}}expand="lg">
+
+<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+        <div class={style.brand_text}>
+           <p>{this.state.school.school_number} - maktab</p>
+           </div>
+        </NavLink></Navbar.Brand>
+<Navbar.Toggle aria-controls="basic-navbar-nav"
+ style={{zIndex:345, borderColor:'white'}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+<Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.navLik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+
+</Navbar>
+</div>            <Container fluid>
               <div className={styles.yangi}>
-                <h1 style={{ fontSize: "60px" }} data-aos="fade-up">
+                <h1 style={{ fontSize: "60px",fontWeight:'bold'}} data-aos="fade-up">
                   Yangiliklar
                 </h1>
               </div>
@@ -147,7 +323,7 @@ export default class Yangiliklar extends Component {
                       />
                       <h3>{this.state.news[this.state.id].title}</h3>
 
-                      <p className={styles.date}>
+                      <p className={styles.date1}>
                         <i
                           style={{ marginRight: "10px" }}
                           class="far fa-calendar-alt"
@@ -165,7 +341,7 @@ export default class Yangiliklar extends Component {
                 <Col lg={5}>
                   <div className={styles.recent_news} data-aos="zoom-in-left">
                     <div className={styles.title}>
-                      <h3>So'nggi yangiliklar</h3>
+                      <h3 style={{ color:'white', textAlign:'center' }}>So'nggi yangiliklar</h3>
                     </div>
                     <div className={styles.body}>
                       <Row>

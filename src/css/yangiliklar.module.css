@@ -9,6 +9,8 @@
     background-repeat: no-repeat;
     
 }
+
+.date{position: absolute; bottom:-15px; left:38%;}
 .carusel2{
     background-image: url(../img/school3.jpg);
     background-size: cover;
@@ -89,6 +91,11 @@ object-fit: cover;
     word-spacing: 10px;
     margin: 2% 0 4% 0;
 color: gray !important;}
+.date1{
+    font-size: 18px;
+    word-spacing: 10px;
+    margin: 2% 0 4% 0;
+color: gray !important;}
 
 .news p{
     font-size: 18px;
@@ -102,7 +109,7 @@ color: gray !important;}
     height: auto;
     padding: 6%;
     position: relative;
-    background-color: lightsteelblue;
+    background:linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99));
     margin-bottom: 5%;
 }
 .title{
@@ -119,9 +126,7 @@ color: gray !important;}
 .body_card{
     cursor: pointer;
 }
-.body_card:hover{
-    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; */
-}
+
 
 .tadbir1{
     margin-bottom: 10%;

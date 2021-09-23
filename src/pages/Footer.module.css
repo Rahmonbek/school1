@@ -1,5 +1,5 @@
 .container{
-    background-color: black;
+    background:linear-gradient(rgba(55, 128, 238, 0.974),rgba(3, 15, 177, 0.981),rgb(7, 5, 138), rgb(5, 3, 99));
     width: 100%;
     padding: 20px 50px;
     padding-bottom: 50px;
@@ -11,7 +11,7 @@
     font-size: 1.7rem;
 }
 .logoUchun p{
-    color: grey;
+    color: white;
     font-size: 1.2rem;
 }
 .ulLi h2{
@@ -32,7 +32,7 @@
     text-decoration: none;
     font-size: 1.2rem;
     letter-spacing: 1.5px;
-    color: grey;
+    color: white;
     transition: 0.3s all ease;
 }
 .ulLi ul li a:hover{
