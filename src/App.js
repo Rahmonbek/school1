@@ -83,7 +83,7 @@ export default class App extends Component {
               </Route>
 
               <Route exact path="/qabul/">
-                <NavBar />
+                {/* <NavBar /> */}
                 <Qabul />
                 <Footer />
               </Route>

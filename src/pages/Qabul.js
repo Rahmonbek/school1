@@ -2,17 +2,34 @@ import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import styles from "../css/qabul.module.css";
-import students from "../img/Students.png";
-import shakl from "../img/shakl.png";
-import jarayon from "../img/jarayon.png";
 import tav_img from "../img/tav_img.jpg";
 import talab from "../img/talab.jpg";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { Carousel } from "antd";
 import axios from "axios";
 import { url, user } from "../host/Host";
 import FadeLoader from "react-spinners/FadeLoader";
-import Global from "../host/Global";
+import { Link, NavLink } from "react-router-dom";
+import { Button,Nav, Navbar,} from "react-bootstrap";
+import { Tooltip} from "antd";
+import school1 from "../img/school1.jpg";
 
+
+
+import {
+  faDoorOpen,
+  faEnvelope,
+  faNewspaper,
+  faPhone,
+  faSchool,
+  faSearch,
+  faSignInAlt,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import style from './BoshSahifa.module.css'
 class Qabul extends React.Component {
   state = {
     loader: true,
@@ -22,7 +39,6 @@ class Qabul extends React.Component {
   };
 
   getSchool = () => {
-    //   var a=window.location.href.split('/')
     var v = user;
     axios.get(`${url}/school-by-admin/${v}`).then((res) => {
       this.setState({
@@ -41,77 +57,198 @@ class Qabul extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className={styles.body_makatab}>
         {this.state.loader ? (
           <div className="loaderT">
             <FadeLoader color="blue" loading={this.state.loader} size={120} />
           </div>
         ) : (
-          <div style={{ width: "100vw", overflowX: "hidden" }}>
-            <div
-              className={styles.qabulHeader}
-              style={{ backgroundColor: "#318CE7", width: "100%" }}
+          <>
+          <div className="iconsHead">
+          <div>
+            <Tooltip placement="left" title="ittower01@gmail.com">
+              {" "}
+              <a
+                target="_blank"
+                style={{ borderRadius: "10px 0px 0px 0px" }}
+                className="ahref"
+                href={`mailto: ${
+                  this.state.school !== null
+                    ? this.state.school.email
+                    : "ittower01@gmail.com"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  style={{ fontSize: "25px" }}
+                />
+              </a>
+            </Tooltip>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://t.me/samarqand_33_maktab"
             >
-              <Container fluid style={{ padding: "0" }}>
-                <div
+              <i className="fab fa-telegram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.instagram.com/33_maktab_official/"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+            >
+              <i className="fab fa-facebook"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+          </div>
+          <div>
+            <Tooltip placement="left" title="+998 93 082 03 72">
+              {" "}
+              <a
+                target="_blank"
+                className="ahref"
+                style={{
+                  borderTop: " 1px solid #1b6602",
+                  borderRadius: "0px 0px 0px 10px",
+                }}
+                href={`tel: ${
+                  this.state.school !== null
+                    ? this.state.school.phone
+                    : "+998 93 082 03 72"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faPhone}
                   style={{
-                    width: "100%",
-                    height: "100vh",
-                    position: "relative",
+                    fontSize: "25px",
+                    borderRadius: "0px 0px 0px 10px",
                   }}
-                >
-                  <Row>
-                    <Col style={{ padding: "0" }} lg={6} md={12} sm={12}>
-                      {" "}
-                      <div data-aos="fade-right" className={styles.text_q}>
-                        <h1>Qabul uchun ariza topshiring</h1>
-                        <img
-                          src="https://as2.ftcdn.net/jpg/01/17/65/19/500_F_117651987_mJuEArLJWmdeGSmSqbntiI5i04RBvhXX.jpg"
-                          style={{
-                            boxShadow:
-                              "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
-                            width: "200px",
-                            height: "200px",
-                            borderRadius: "50%",
-                            marginLeft: "30%",
-                            marginTop: "10%",
-                          }}
-                        />
-                      </div>
-                    </Col>
-                    <Col
-                      style={{ padding: "0" }}
-                      lg={6}
-                      md={12}
-                      sm={12}
-                      className={styles.img}
-                      data-aos="zoom-in-up"
-                    >
-                      <img
-                        src={shakl}
-                        className={styles.back}
-                        style={{
-                          width: "450px",
-                          height: "450px",
-                          bottom: "0px",
-                          position: "absolute",
-                        }}
-                      />
-                      <img
-                        src={students}
-                        className={styles.main}
-                        style={{
-                          position: "absolute",
-                          bottom: "-50px",
-                          height: "625px",
-                        }}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-              </Container>
-            </div>
+                />
+              </a>{" "}
+            </Tooltip>
+          </div>
+        </div>
+        <div className={style.header}>
+            <div className={style.navT}>
+            <Navbar expand="lg">
+<Container className={style.navT_item}>
+<Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
+  <Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.nlik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+</Container>
+</Navbar>
+</div>
+<Container><Row>
+         <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+             {/* <p>Sifat va qulay narxlar</p> */}
+             <h1>Maktabimiz hayoti bilan tanishing.</h1>
 
+             <a target="_blank" href={`tel: ${this.state.school.tel}`}>Biz bilan bog'laning</a>
+         </Col>
+         <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+         <div className={style.head_img}>
+       
+         <div className={style.comp}>
+
+          <img src={ this.state.school !== null && this.state.school.m_h_h1 !== null
+                  ? this.state.school.m_h_h2
+                  : school1}/>
+              
+   
+          </div> 
+         </div>
+         </Col>
+         </Row></Container><div className={style.di} style={{zIndex:'2'}}></div>
+    
+</div>
+<div className={style.navG} 
+data-aos="fade-bottom"
+ data-aos-anchor-placement="bottom-top"
+ >
+<Navbar style={{position:"relative"}}expand="lg">
+
+<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+        <div class={style.brand_text}>
+           <p>{this.state.school.school_number} - maktab</p>
+           </div>
+        </NavLink></Navbar.Brand>
+<Navbar.Toggle aria-controls="basic-navbar-nav"
+ style={{zIndex:345, borderColor:'white'}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+<Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.navLik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+
+</Navbar>
+</div>
+
+       <div className={styles.dark_maktab}>
             <div className={styles.tavsilotlar}>
               <Container fluid style={{ padding: "0" }}>
                 <Row>
@@ -122,16 +259,17 @@ class Qabul extends React.Component {
                     sm={12}
                     className={styles.tavsilot}
                   >
-                    <img
-                      src={
-                        this.state.school !== null
-                          ? this.state.school.q !== null
-                            ? this.state.school.q
+                    <div className={styles.qabul_image} data-aos="zoom-in-down">
+                      <Image
+                        src={
+                          this.state.school !== null
+                            ? this.state.school.q !== null
+                              ? this.state.school.q
+                              : tav_img
                             : tav_img
-                          : tav_img
-                      }
-                      data-aos="zoom-in-up"
-                    />
+                        }
+                      />
+                    </div>
                   </Col>
                   <Col
                     style={{ padding: "0" }}
@@ -150,13 +288,6 @@ class Qabul extends React.Component {
                           : "Qabul jarayonlari bo'yicha tavsilotlar"
                         : "Qabul jarayonlari bo'yicha tavsilotlar"}
                     </p>
-
-                    {/* <p>
-                            Agar siz ertangi kun uchun dunyoni tarannum etishga qaratilgan shahar markazidagi universitetda o'qishni istasangiz, siz to'g'ri joyni tanlaysiz. Talabalarni tanlash uchun biz maxsus formulalardan foydalanmaymiz. Biz har bir talabnoma beruvchining ilmiy va shaxsiy arizalarini ko'rib chiqamiz, har xil ma'lumotlarga ega bo'lgan jamoamizga mos talabalarni tanlash uchun.
-                            </p>
-                            <p>
-                            Agar siz shaharning qoq markazida joylashgan universitetda o'qishni xohlasangiz, agar siz ertangi kun uchun dunyoni tarannum etishga e'tibor qaratadigan shahar markazidagi universitetda o'qishni xohlasangiz, siz to'g'ri joyni tanlaysiz. Talabalarni tanlash uchun biz maxsus formulalardan foydalanmaymiz. Biz har bir abituriyentning ilmiy va shaxsiy arizasini ko'rib chiqamiz, bu bizning jamoamizga to'liq mos keladigan talabalarni tanlash uchun
-                            </p> */}
                   </Col>
                 </Row>
               </Container>
@@ -166,29 +297,12 @@ class Qabul extends React.Component {
               <Container fluid style={{ padding: "0" }}>
                 <Row>
                   <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div
-                      className={styles.info}
-                      style={{ backgroundColor: "white" }}
-                      data-aos="zoom-in-up"
-                    >
-                      <div
-                        style={{
-                          width: "70px",
-                          height: "70px",
-                          borderRadius: "50%",
-                          backgroundColor: "white",
-                          margin: "auto",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          display: "flex",
-                          marginTop: "-60px",
-                          border: "3px solid #318CE7",
-                        }}
-                      >
-                        <img src="https://image.flaticon.com/icons/png/512/906/906175.png" />
+                    <div className={styles.info} data-aos="zoom-in-up">
+                      <div className={styles.qabul_talim}>
+                        <Image src="https://image.flaticon.com/icons/png/512/906/906175.png" />
                       </div>
                       <h3>Ta'lim shakli</h3>
-                      <p style={{ fontSize: "18px" }}>
+                      <p>
                         {this.state.school !== null
                           ? this.state.school.q_talim !== null
                             ? this.state.school.q_talim
@@ -198,31 +312,13 @@ class Qabul extends React.Component {
                       </p>
                     </div>
                   </Col>
-
                   <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div
-                      className={styles.info_b}
-                      style={{ backgroundColor: "#318CE7" }}
-                      data-aos="zoom-in-up"
-                    >
-                      <div
-                        style={{
-                          width: "70px",
-                          height: "70px",
-                          borderRadius: "50%",
-                          backgroundColor: "white",
-                          margin: "auto",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          display: "flex",
-                          marginTop: "-60px",
-                          border: "3px solid #318CE7",
-                        }}
-                      >
-                        <img src="https://image.flaticon.com/icons/png/512/3829/3829933.png" />
+                    <div className={styles.info} s data-aos="zoom-in-up">
+                      <div className={styles.qabul_talim}>
+                        <Image src="https://image.flaticon.com/icons/png/512/3829/3829933.png" />
                       </div>
                       <h3>Bitiruvchilar</h3>
-                      <p style={{ fontSize: "18px" }}>
+                      <p>
                         {this.state.school !== null
                           ? this.state.school.q_bitiruv !== null
                             ? this.state.school.q_bitiruv
@@ -234,29 +330,12 @@ class Qabul extends React.Component {
                     </div>
                   </Col>
                   <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div
-                      className={styles.info}
-                      style={{ backgroundColor: "white" }}
-                      data-aos="zoom-in-up"
-                    >
-                      <div
-                        style={{
-                          width: "70px",
-                          height: "70px",
-                          borderRadius: "50%",
-                          backgroundColor: "white",
-                          margin: "auto",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          display: "flex",
-                          marginTop: "-60px",
-                          border: "3px solid #318CE7",
-                        }}
-                      >
-                        <img src="https://image.flaticon.com/icons/png/512/950/950145.png" />
+                    <div className={styles.info} data-aos="zoom-in-up">
+                      <div className={styles.qabul_talim}>
+                        <Image src="https://image.flaticon.com/icons/png/512/950/950145.png" />
                       </div>
                       <h3>O'quvchilar</h3>
-                      <p style={{ fontSize: "18px" }}>
+                      <p>
                         {this.state.school !== null
                           ? this.state.school.q_oquvchi !== null
                             ? this.state.school.q_oquvchi
@@ -272,115 +351,93 @@ class Qabul extends React.Component {
 
             <div className={styles.jarayon}>
               <Container fluid style={{ padding: "0" }}>
-                <h1
-                  style={{
-                    textAlign: "center",
-                    fontFamily: "Lobster",
-                    fontSize: "50px",
-                  }}
-                >
-                  Qabul jarayoni
-                </h1>
+                <h1>Qabul jarayoni</h1>
                 <div
                   className={styles.line}
                   style={{ marginLeft: "auto", marginRight: "auto" }}
                 ></div>
-                <Row>
-                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div className={styles.jarayon_text}>
-                      <h3>1. Onlayn ro'yxatdan o'ting</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_online !== null
-                            ? this.state.school.q_j_online
-                            : "O'nline ro'yxatdan o'tish haqida"
-                          : "O'nline ro'yxatdan o'tish haqida"}
+                <Carousel autoplay>
+                  <div className={styles.jarayon_text}>
+                    <h3>1. Onlayn royxatdan o'ting</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_online !== null
+                          ? this.state.school.q_j_online
+                          : "O'nline ro'yxatdan o'tish haqida"
+                        : "O'nline ro'yxatdan o'tish haqida"}
 
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
 
-                    <div className={styles.jarayon_text}>
-                      <h3>2. Ariza yozing</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_forma !== null
-                            ? this.state.school.q_j_forma
-                            : "Ro'yxatdan o'tishdagi ariza haqida ma'lumot"
-                          : "Ro'yxatdan o'tishdagi ariza haqida ma'lumot"}
+                  <div className={styles.jarayon_text}>
+                    <h3>2. Ariza yozing</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_forma !== null
+                          ? this.state.school.q_j_forma
+                          : "Ro'yxatdan o'tishdagi ariza haqida ma'lumot"
+                        : "Ro'yxatdan o'tishdagi ariza haqida ma'lumot"}
 
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
 
-                    <div className={styles.jarayon_text}>
-                      <h3>3. Arizani ko'zdan kechiring</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_koz !== null
-                            ? this.state.school.q_j_koz
-                            : "Arizani ko'zdan kechirish haqida ma'lumot"
-                          : "Arizani ko'zdan kechirish haqida ma'lumot"}
+                  <div className={styles.jarayon_text}>
+                    <h3>3. Arizani ko'zdan kechiring</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_koz !== null
+                          ? this.state.school.q_j_koz
+                          : "Arizani ko'zdan kechirish haqida ma'lumot"
+                        : "Arizani ko'zdan kechirish haqida ma'lumot"}
 
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
-                  </Col>
-                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div className={styles.jarayon_img}>
-                      <img src={jarayon} />
-                    </div>
-                  </Col>
-                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                    <div className={styles.jarayon_text}>
-                      <h3>4. Kerakli hujjatlarni to'plang</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_hujjat !== null
-                            ? this.state.school.q_j_hujjat
-                            : "Ro'yxatdan o'tish uchun kerak bo'ladigan hujjatlar to'g'risida ma'lumot"
-                          : "Ro'yxatdan o'tish uchun kerak bo'ladigan hujjatlar to'g'risida ma'lumot"}
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
 
-                    <div className={styles.jarayon_text}>
-                      <h3>5. Suhbat jarayoni</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_intervyu !== null
-                            ? this.state.school.q_j_intervyu
-                            : "Suhbat jarayoni haqida ma'lumot"
-                          : "Suhbat jarayoni haqida ma'lumot"}
+                  <div className={styles.jarayon_text}>
+                    <h3>4. Kerakli hujjatlarni to'plang</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_hujjat !== null
+                          ? this.state.school.q_j_hujjat
+                          : "Ro'yxatdan o'tish uchun kerak bo'ladigan hujjatlar to'g'risida ma'lumot"
+                        : "Ro'yxatdan o'tish uchun kerak bo'ladigan hujjatlar to'g'risida ma'lumot"}
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
 
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
+                  <div className={styles.jarayon_text}>
+                    <h3>5. Suhbat jarayoni</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_intervyu !== null
+                          ? this.state.school.q_j_intervyu
+                          : "Suhbat jarayoni haqida ma'lumot"
+                        : "Suhbat jarayoni haqida ma'lumot"}
 
-                    <div className={styles.jarayon_text}>
-                      <h3>6. So'nggi qaror</h3>
-                      <div className={styles.line}></div>
-                      <p>
-                        {this.state.school !== null
-                          ? this.state.school.q_j_qaror !== null
-                            ? this.state.school.q_j_qaror
-                            : "So'ngi qaror haqida ma'lumot"
-                          : "So'ngi qaror haqida ma'lumot"}
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
 
-                        {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
+                  <div className={styles.jarayon_text}>
+                    <h3>6. So'nggi qaror</h3>
+                    <p>
+                      {this.state.school !== null
+                        ? this.state.school.q_j_qaror !== null
+                          ? this.state.school.q_j_qaror
+                          : "So'ngi qaror haqida ma'lumot"
+                        : "So'ngi qaror haqida ma'lumot"}
+
+                      {/* Ajoyib osoyishtalik butun qalbimni egallab oldi, xuddi bahorning shu shirin tonglari kabi, men butun qalbim bilan zavqlanaman. Men yolg'izman va borliq jozibasini his qilaman. */}
+                    </p>
+                  </div>
+                </Carousel>
               </Container>
             </div>
 
-            <div className={styles.tavsilotlar} style={{ height: "580px" }}>
+            <div className={styles.tavsilotlar}>
               <Container fluid style={{ padding: "0" }}>
                 <Row>
                   <Col
@@ -390,7 +447,7 @@ class Qabul extends React.Component {
                     sm={12}
                     className={styles.tavsilot}
                   >
-                    <img
+                    <Image
                       src={
                         this.state.school !== null
                           ? this.state.school.q_imtihon_r !== null
@@ -408,11 +465,8 @@ class Qabul extends React.Component {
                     sm={12}
                     className={styles.tavsilottext}
                     data-aos="zoom-in-up"
-                    style={{ height: "570px" }}
                   >
-                    <h3 style={{ fontSize: "30px" }}>
-                      Imtihonda ishtirok etish talablari
-                    </h3>
+                    <h3>Imtihonda ishtirok etish talablari</h3>
                     <p>
                       {this.state.school !== null
                         ? this.state.school.q_imtihon_t !== null
@@ -437,67 +491,55 @@ class Qabul extends React.Component {
 
             <div className={styles.muddat} data-aos="fade-up">
               <Container fluid style={{ padding: "0" }}>
-                <h1
-                  style={{
-                    textAlign: "center",
-                    fontFamily: "Lobster",
-                    fontSize: "40px",
-                  }}
-                >
-                  Ma'lumotlar
-                </h1>
-                <div
-                  className={styles.line}
-                  style={{ marginLeft: "auto", marginRight: "auto" }}
-                ></div>
-                <Row>
-                  <div className={styles.muddat_item}>
-                    <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                      <div className={styles.muddat_text1}>
-                        <div>
-                          <h3>O'quv yili</h3>
-                          <p>
-                            {this.state.school !== null
-                              ? this.state.school.q_oquv_yili !== null
-                                ? this.state.school.q_oquv_yili
-                                : "O'quv yili"
-                              : "O'quv yili"}
-                            {/* 2020/2021 */}
-                          </p>
-                        </div>
+                <div className={styles.muddat_header}>
+                  <h1>Ma'lumotlar</h1>
+                  <div className={styles.line}></div>
+                </div>
+                <Row className={styles.muddat_item}>
+                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
+                    <div className={styles.muddat_text1}>
+                      <div>
+                        <h3>O'quv yili</h3>
+                        <p>
+                          {this.state.school !== null
+                            ? this.state.school.q_oquv_yili !== null
+                              ? this.state.school.q_oquv_yili
+                              : "O'quv yili"
+                            : "O'quv yili"}
+                        </p>
                       </div>
-                    </Col>
-                    <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                      <div className={styles.muddat_text2}>
-                        <div>
-                          <h3>Hujjat topshirish muddati</h3>
-                          <p>
-                            {this.state.school !== null
-                              ? this.state.school.q_muddat !== null
-                                ? this.state.school.q_muddat
-                                : "Muddati haqida ma'lumot"
-                              : "Muddati haqida ma'lumot"}
-                            {/* 10-20-sentabr kunlari */}
-                          </p>
-                        </div>
+                    </div>
+                  </Col>
+                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
+                    <div className={styles.muddat_text2}>
+                      <div>
+                        <h3>Hujjat topshirish muddati</h3>
+                        <p>
+                          {this.state.school !== null
+                            ? this.state.school.q_muddat !== null
+                              ? this.state.school.q_muddat
+                              : "Muddati haqida ma'lumot"
+                            : "Muddati haqida ma'lumot"}
+                          {/* 10-20-sentabr kunlari */}
+                        </p>
                       </div>
-                    </Col>
-                    <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
-                      <div className={styles.muddat_text3}>
-                        <div>
-                          <h3>Imtihon kuni</h3>
-                          <p>
-                            {this.state.school !== null
-                              ? this.state.school.q_imtihon !== null
-                                ? this.state.school.q_imtihon
-                                : "Imtixon kuni"
-                              : "Imtixon kuni"}
-                            {/* 25-sentabrdan 9-oktabrgacha */}
-                          </p>
-                        </div>
+                    </div>
+                  </Col>
+                  <Col style={{ padding: "0" }} lg={4} md={12} sm={12}>
+                    <div className={styles.muddat_text3}>
+                      <div>
+                        <h3>Imtihon kuni</h3>
+                        <p>
+                          {this.state.school !== null
+                            ? this.state.school.q_imtihon !== null
+                              ? this.state.school.q_imtihon
+                              : "Imtixon kuni"
+                            : "Imtixon kuni"}
+                          {/* 25-sentabrdan 9-oktabrgacha */}
+                        </p>
                       </div>
-                    </Col>
-                  </div>
+                    </div>
+                  </Col>
                 </Row>
               </Container>
             </div>
@@ -506,8 +548,7 @@ class Qabul extends React.Component {
               <div className={styles.hujjat}>
                 <div className={styles.hujjat_text} data-aos="fade-right">
                   <h3>Kerakli hujjatlar</h3>
-                  <div className={styles.line}></div>
-                  <p style={{ padding: "10px" }}>
+                  <p>
                     <b>1.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t1 !== null
@@ -516,7 +557,7 @@ class Qabul extends React.Component {
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* O‘quvchining tug‘ilganligi haqida guvohnoma (pdf-10Mb oshmagan holatda). */}
                   </p>
-                  <p style={{ padding: "10px" }}>
+                  <p>
                     <b>2.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t2 !== null
@@ -525,7 +566,7 @@ class Qabul extends React.Component {
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* 2019-2020 o‘quv yilini “4”va “5” baholarga bitirganligini tasdiqlovchi o‘quvchining tabeli. Maktab direktori tomonidan tasdiqlangan bo‘lishi kerak (pdf-10Mb oshmagan holatda). */}
                   </p>
-                  <p style={{ padding: "10px" }}>
+                  <p>
                     <b>3.</b>
                     {this.state.school !== null
                       ? this.state.school.q_hujjat_t3 !== null
@@ -534,7 +575,7 @@ class Qabul extends React.Component {
                       : "Kerakli hujjatlar to'g'risida ma'lumot"}
                     {/* 3/4 Rasm (jpg/png/jpeg-formatida). */}
                   </p>
-                  <p style={{ color: "darkgray", marginTop: "30px" }}>
+                  <p>
                     {this.state.school !== null
                       ? this.state.school.address !== null
                         ? this.state.school.address
@@ -546,8 +587,9 @@ class Qabul extends React.Component {
               </div>
             </Container>
           </div>
-        )}
+          </> )}
       </div>
+  
     );
   }
 }

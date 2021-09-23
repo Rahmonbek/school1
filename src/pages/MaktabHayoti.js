@@ -5,7 +5,6 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { Carousel } from "antd";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import school1 from "../img/school1.jpg";
 import school2 from "../img/school2.jpg";
 import school3 from "../img/school3.jpg";
 import school4 from "../img/school4.jpg";
@@ -18,16 +17,19 @@ import school11 from "../img/school11.jpg";
 import school12 from "../img/school12.jpg";
 import school13 from "../img/school13.jpg";
 import { Tooltip} from "antd";
-import style from "./BoshSahifa.module.css";
-import { Link, NavLink } from "react-router-dom";
-import { Button,Nav, Navbar,} from "react-bootstrap";
+import school1 from "../img/school1.jpg";
 
+import style from "./BoshSahifa.module.css";
 
 // import { Link } from "react-router-dom";
 import { DownCircleOutlined } from "@ant-design/icons";
 import { BiStop, BiRightArrowAlt } from "react-icons/bi";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link, NavLink } from "react-router-dom";
+import { Button,Nav, Navbar,} from "react-bootstrap";
+
+
 import {
   faDoorOpen,
   faEnvelope,
