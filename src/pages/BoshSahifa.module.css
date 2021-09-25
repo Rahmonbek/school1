@@ -35,7 +35,7 @@ z-index: 4567;
  }
  .navG{ background:linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99));
     width:100%; 
-    z-index: 3456; padding:10px;
+    z-index: 3456; padding:0px;
      display: flex; align-items:center; 
      justify-content: center; position:fixed; top:0px;}
  .navG .birinchi{margin-left: 30%;}

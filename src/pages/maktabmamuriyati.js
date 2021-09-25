@@ -252,24 +252,24 @@ setTimeout(()=>{
 <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
 <Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
   <Nav className="me-auto" className={style.navT_nav}>
-  <NavLink className={style.nlik} to={`/`}>
+  <Nav.Link className={style.nlik} to="/">
                 <span className={style.lik}>Bosh sahifa</span>
-              </NavLink>
-              <NavLink className={style.nlik} to={`/hayot/`}>
+              </Nav.Link>
+              <Nav.Link className={style.nlik} to="/hayot/">
                 <span className={style.lik}>Maktab hayoti</span>
-              </NavLink>
-              <NavLink className={style.nlik} to={`/qabul/`}>
+              </Nav.Link>
+              <Nav.Link className={style.nlik} to="/qabul/">
                 <span className={style.lik}>Qabul</span>
-              </NavLink>
-              <NavLink className={style.nlik} to={`/yangiliklar/`}>
+              </Nav.Link>
+              <Nav.Link className={style.nlik} to="/yangiliklar/">
                 <span className={style.lik}>Yangiliklar</span>
-              </NavLink>
-              <NavLink className={style.nlik} to={`/rahbariyat/`}>
+              </Nav.Link>
+              <Nav.Link className={style.nlik} to="/rahbariyat/">
                 <span className={style.lik}>Maktab ma'muriyati</span>
-              </NavLink>
-              <NavLink className={style.nlik} to={`/alochilar/`}>
+              </Nav.Link>
+              <Nav.Link className={style.nlik} to="/alochilar/">
                 <span className={style.lik}>Maktab a'lochilari</span>
-              </NavLink>
+              </Nav.Link>
           
     
   </Nav>
@@ -307,33 +307,33 @@ data-aos="fade-bottom"
  >
 <Navbar style={{position:"relative"}}expand="lg">
 
-<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+<Navbar.Brand><Nav.Link className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
         <div class={style.brand_text}>
            <p>{this.state.data!==null?this.state.data.school_number:''} - maktab</p>
            </div>
-        </NavLink></Navbar.Brand>
+        </Nav.Link></Navbar.Brand>
 <Navbar.Toggle aria-controls="basic-navbar-nav"
  style={{zIndex:345, borderColor:'white'}} />
 <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
 <Nav className="me-auto" className={style.navT_nav}>
-  <NavLink className={style.navLik} to={`/`}>
+  <Nav.Link className={style.navLik} to="/">
                 <span className={style.lik}>Bosh sahifa</span>
-              </NavLink>
-              <NavLink className={style.navLik} to={`/hayot/`}>
+              </Nav.Link>
+              <Nav.Link className={style.navLik} to="/hayot/">
                 <span className={style.lik}>Maktab hayoti</span>
-              </NavLink>
-              <NavLink className={style.navLik} to={`/qabul/`}>
+              </Nav.Link>
+              <Nav.Link className={style.navLik} to="/qabul/">
                 <span className={style.lik}>Qabul</span>
-              </NavLink>
-              <NavLink className={style.navLik} to={`/yangiliklar/`}>
+              </Nav.Link>
+              <Nav.Link className={style.navLik} to="/yangiliklar/">
                 <span className={style.lik}>Yangiliklar</span>
-              </NavLink>
-              <NavLink className={style.navLik} to={`/rahbariyat/`}>
+              </Nav.Link>
+              <Nav.Link className={style.navLik} to="/rahbariyat/">
                 <span className={style.lik}>Maktab ma'muriyati</span>
-              </NavLink>
-              <NavLink className={style.navLik} to={`/alochilar/`}>
+              </Nav.Link>
+              <Nav.Link className={style.navLik} to="/alochilar/">
                 <span className={style.lik}>Maktab a'lochilari</span>
-              </NavLink>
+              </Nav.Link>
           
     
   </Nav>
