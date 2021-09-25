@@ -13,10 +13,29 @@ import 'aos/dist/aos.css';
 // import {FadeLoader} from 'react-spinners'
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 import axios from 'axios';
-import { url } from '../host/Host';
+import { url, user } from '../host/Host';
 import {Carousel} from 'react-bootstrap'
 import Global from '../host/Global';
 import { FadeLoader } from 'react-spinners';
+import { Tooltip} from "antd";
+import { Button,Nav, NavLink, Navbar,} from "react-bootstrap";
+
+// import school1 from "../img/school1.jpg";
+import {
+  faDoorOpen,
+  faEnvelope,
+  faNewspaper,
+  faPhone,
+  faSchool,
+  faSearch,
+  faSignInAlt,
+  faUserCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import style from './BoshSahifa.module.css'
+
 
 export default class Maktabmamuriyati extends Component {
 state={
@@ -30,8 +49,15 @@ state={
   yetakchi:null,
   chqbt:null,
   loader:true,
-
+data:null,
   
+}
+getSchool=()=>{
+  var v = user;
+  axios.get(`${url}/school-by-admin/${v}`).then((res) => {
+    this.setState({ data: res.data });
+  
+  });
 }
 getStaff=()=>{
   axios.get(`${url}/staff-by-school/${Global.schoolId}/`).then(res=>{
@@ -102,9 +128,7 @@ setTimeout(()=>{
 
   }).catch(err=>{
     
-    this.setState({
-  loader:false,    
-})
+  
   })
 }
 
@@ -113,6 +137,7 @@ setTimeout(()=>{
         duration:2000
     })
     this.getStaff()
+    this.getSchool()
 }
 
     render() {
@@ -132,164 +157,202 @@ setTimeout(()=>{
           </div>
          : 
             <>  <br/><br/><br/>
-            <Carousel style={{position:'relative',}} className="carTur">
-            {this.state.direktor!==null?this.state.direktor.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px',  width:'100%', fontSize:'24px',  color:'white'}}>Maktab direktori</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
+    <div className="iconsHead">
+          <div>
+            <Tooltip placement="left" title="ittower01@gmail.com">
+              {" "}
+              <a
+                target="_blank"
+                style={{ borderRadius: "10px 0px 0px 0px" }}
+                className="ahref"
+                href={`mailto: ${
+                  this.state.data !== null
+                    ? this.state.data.email
+                    : "ittower01@gmail.com"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  style={{ fontSize: "25px" }}
+                />
+              </a>
+            </Tooltip>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://t.me/samarqand_33_maktab"
+            >
+              <i className="fab fa-telegram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.instagram.com/33_maktab_official/"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+            >
+              <i className="fab fa-facebook"></i>
+            </a>
+          </div>
+          <div>
+            <a
+              target="_blank"
+              style={{ borderTop: " 1px solid #1b6602" }}
+              className="ahref"
+              href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+            >
+              <i className="fab fa-youtube"></i>
+            </a>
+          </div>
+          <div>
+            <Tooltip placement="left" title="+998 93 082 03 72">
+              {" "}
+              <a
+                target="_blank"
+                className="ahref"
+                style={{
+                  borderTop: " 1px solid #1b6602",
+                  borderRadius: "0px 0px 0px 10px",
+                }}
+                href={`tel: ${
+                  this.state.data !== null
+                    ? this.state.data.phone
+                    : "+998 93 082 03 72"
+                }`}
+              >
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  style={{
+                    fontSize: "25px",
+                    borderRadius: "0px 0px 0px 10px",
+                  }}
+                />
+              </a>{" "}
+            </Tooltip>
+          </div>
+        </div>
+        <div className={style.header} style={{marginTop:'-60px'}}>
+            <div className={style.navT}>
+            <Navbar expand="lg">
+<Container className={style.navT_item}>
+<Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
+  <Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.nlik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.nlik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+</Container>
+</Navbar>
+</div>
+<Container><Row>
+         <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+             {/* <p>Sifat va qulay narxlar</p> */}
+             <h1>Maktabimiz ma'muriyati a'zolari bilan tanishing.</h1>
+
+             <a target="_blank" href={`tel: ${ this.state.data !== null
+                    ? this.state.data.phone:'#'}`}>Biz bilan bog'laning</a>
+         </Col>
+         <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+         <div className={style.head_img}>
+       
+         <div className={style.comp}>
+
+          <img src={this.state.direktor !== null
+                  ? this.state.direktor[0].image
+                  : school1}/>
+              
    
-       {/* {this.state.orin1!==null?this.state.orin1.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>O'quv va tarbiyaviy ishlar bo'yicha direktor o'rinbosari</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.orin2!==null?this.state.orin2.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Ma'naviy-ma'rifiy ishlar bo'yicha direktor o'rinbosari</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.orin3!==null?this.state.orin3.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Ma'muriy-xo’jalik ishlar bo'yicha direktor o'rinbosari</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.psixolog!==null?this.state.psixolog.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Maktab amaliyotchi psixologi</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.kasaba!==null?this.state.kasaba.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Kasaba uyushma raisi</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.kutubxona!==null?this.state.kutubxona.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Kutubxona mudirasi</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.chqbt!==null?this.state.chqbt.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Chaqiruvga qadar boshlang‘ich tayyorgarlik rahbari</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-   
-       {this.state.yetakchi!==null?this.state.yetakchi.map(item=>{
-             return(
-              <Carousel.Item>
-      <img
-        className="d-block w-100"
-        style={{height:'90vh'}}
-        src={item.image}
-        alt="First slide"
-      />
-      <Carousel.Caption>
-        
-      <p style={{backgroundColor:'#000000b3', padding:'10px', position:'relative',top:'-20px', width:'100%', fontSize:'24px',  color:'white'}}>Maktab direktori</p>
-    </Carousel.Caption>
-  </Carousel.Item>)
-           }):""}
-    */}
-</Carousel>
+          </div> 
+         </div>
+         </Col>
+         </Row></Container><div className={style.di} style={{zIndex:'2'}}></div>
+    
+</div>
+<div className={style.navG} 
+data-aos="fade-bottom"
+ data-aos-anchor-placement="bottom-top"
+ >
+<Navbar style={{position:"relative"}}expand="lg">
+
+<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
+        <div class={style.brand_text}>
+           <p>{this.state.data!==null?this.state.data.school_number:''} - maktab</p>
+           </div>
+        </NavLink></Navbar.Brand>
+<Navbar.Toggle aria-controls="basic-navbar-nav"
+ style={{zIndex:345, borderColor:'white'}} />
+<Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+<Nav className="me-auto" className={style.navT_nav}>
+  <NavLink className={style.navLik} to={`/`}>
+                <span className={style.lik}>Bosh sahifa</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/hayot/`}>
+                <span className={style.lik}>Maktab hayoti</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/qabul/`}>
+                <span className={style.lik}>Qabul</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                <span className={style.lik}>Yangiliklar</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                <span className={style.lik}>Maktab ma'muriyati</span>
+              </NavLink>
+              <NavLink className={style.navLik} to={`/alochilar/`}>
+                <span className={style.lik}>Maktab a'lochilari</span>
+              </NavLink>
+          
+    
+  </Nav>
+</Navbar.Collapse>
+
+</Navbar>
+</div>
                 <Container>
                     <Row>
                     {this.state.direktor!==null?this.state.direktor.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Maktab direktori</p>
                                     </Col>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
                                       <Row>  
                                         <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -329,10 +392,10 @@ setTimeout(()=>{
    
        {this.state.orin1!==null?this.state.orin1.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
                                       <Row>  
                                       <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -365,7 +428,7 @@ setTimeout(()=>{
                                         </Col>
                                      </Row>
                                     </Col>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>O'quv va tarbiyaviy ishlar bo'yicha direktor o'rinbosari</p>
                                     </Col>
@@ -376,14 +439,14 @@ setTimeout(()=>{
    
        {this.state.orin2!==null?this.state.orin2.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Ma'naviy-ma'rifiy ishlar bo'yicha direktor o'rinbosari</p>
                                     </Col>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
                                       <Row>  
                                         <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -423,10 +486,10 @@ setTimeout(()=>{
    
        {this.state.orin3!==null?this.state.orin3.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
                                       <Row>  
                                       <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -459,7 +522,7 @@ setTimeout(()=>{
                                         </Col>
                                      </Row>
                                     </Col>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Ma'muriy-xo’jalik ishlar bo'yicha direktor o'rinbosari</p>
                                     </Col>
@@ -470,14 +533,14 @@ setTimeout(()=>{
    
        {this.state.psixolog!==null?this.state.psixolog.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Maktab amaliyotchi psixologi</p>
                                     </Col>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
                                       <Row>  
                                         <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -518,10 +581,10 @@ setTimeout(()=>{
    
        {this.state.kasaba!==null?this.state.kasaba.map(item=>{
              return(
-               <Col lg={12}>
+               <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
                                       <Row>  
                                       <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -554,7 +617,7 @@ setTimeout(()=>{
                                         </Col>
                                      </Row>
                                     </Col>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Kasaba uyushma raisi</p>
                                     </Col>
@@ -566,14 +629,14 @@ setTimeout(()=>{
    
        {this.state.kutubxona!==null?this.state.kutubxona.map(item=>{
              return(
-                 <Col lg={12}>
+                 <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Kutubxona mudirasi</p>
                                     </Col>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
                                       <Row>  
                                         <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -614,10 +677,10 @@ setTimeout(()=>{
    
        {this.state.chqbt!==null?this.state.chqbt.map(item=>{
              return(
-                 <Col lg={12}>
+                 <Col lg={6} md={6} sm={12}>
                             <div className={styles.carddirektor} data-aos="zoom-in-up">
                                 <Row>
-                                    <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
+                                    <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px'}}>
                                       <Row>  
                                       <Col lg={12} style={{marginBottom:'5px'}}>
                                         <span className={styles.direktorbr}>F.I.O:</span>
@@ -650,7 +713,7 @@ setTimeout(()=>{
                                         </Col>
                                      </Row>
                                     </Col>
-                                    <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                                    <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                                         <img src={item.image}/>
                                         <p style={{textAlign:'center'}}>Chaqiruvga qadar boshlang‘ich tayyorgarlik rahbari</p>
                                     </Col>
@@ -662,14 +725,14 @@ setTimeout(()=>{
    
        {this.state.yetakchi!==null?this.state.yetakchi.map(item=>{
              return(
-              <Col lg={12}>
+              <Col lg={6} md={6} sm={12}>
               <div className={styles.carddirektor} data-aos="zoom-in-up">
                   <Row>
-                      <Col lg={4} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+                      <Col lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#0F4C81',height:'400px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
                           <img src={item.image}/>
                           <p style={{textAlign:'center'}}>Boshlang'ich tashkilot yoshlar yetakchisi</p>
                       </Col>
-                      <Col className={styles.cardwrap} lg={8} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
+                      <Col className={styles.cardwrap} lg={12} style={{border:'1px solid #0F4C81',backgroundColor:'#FCFCFC',paddingTop:'60px', height:'400px', overflowY:'auto'}}>
                         <Row>  
                           <Col lg={12} style={{marginBottom:'5px'}}>
                           <span className={styles.direktorbr}>F.I.O:</span>
@@ -709,7 +772,7 @@ setTimeout(()=>{
            }):""}
    
                   
-                        <Col lg={12}>
+                        <Col lg={6} md={6} sm={12}>
 
                         <Car autoplay
                        className={styles.sliderComment}
