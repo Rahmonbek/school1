@@ -152,7 +152,10 @@ export default class MaktabTadbirlari extends Component {
         <div style={{ backgroundColor: "white", marginTop: "-30px" }}>
           <h1 className={style.sarlavha}> Bizning hamkorlarimiz</h1>
 
-          <div className={style.sliderHomiy} style={{ backgroundColor: "white" }}>
+          <div
+            className={style.sliderHomiy}
+            style={{ backgroundColor: "white" }}
+          >
             <Carousel
               responsive={responsive}
               autoPlay={this.props.deviceType !== "mobile" ? true : false}
@@ -167,7 +170,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://president.uz/oz" target="_blank">
                     <img src={school} />
                   </a>
@@ -182,7 +188,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://www.gov.uz/uz" target="_blank">
                     <img src={her2} />
                   </a>
@@ -197,7 +206,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://lex.uz/" target="_blank">
                     <img src={her3} />
                   </a>
@@ -212,7 +224,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://my.gov.uz/oz" target="_blank">
                     <img src={her4} />
                   </a>
@@ -227,7 +242,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://www.uzedu.uz/" target="_blank">
                     <img src={her5} />
                   </a>
@@ -242,7 +260,10 @@ export default class MaktabTadbirlari extends Component {
                   alingItems: "center",
                 }}
               >
-                <div className={style.toolpat} style={{ backgroundColor: "white" }}>
+                <div
+                  className={style.toolpat}
+                  style={{ backgroundColor: "white" }}
+                >
                   <a href="https://ittower.uz/" target="_blank">
                     <img src={her6} />
                   </a>
@@ -299,7 +320,7 @@ export default class MaktabTadbirlari extends Component {
                   </Map>
                 </YMaps>
                 <br />
-                <img className="yil" src={yil} />
+                <img className={style.yil} src={yil} alt="" />
                 <br />
               </div>
             </Col>
