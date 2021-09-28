@@ -257,7 +257,7 @@ export default class BoshSahifa extends Component {
            
              <div className={style.comp}>
 
-              <img src={this.state.school.b_r1}/>
+              <img src={this.state.school!==null?this.state.school.b_r1:rasm1}/>
                   
        
               </div> 
