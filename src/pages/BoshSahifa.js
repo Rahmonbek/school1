@@ -248,7 +248,9 @@ export default class BoshSahifa extends Component {
 <Container><Row>
              <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                  {/* <p>Sifat va qulay narxlar</p> */}
-                 <h1>{this.state.school.school_number+'-'+ this.state.school.type}</h1>
+                
+                 <h1 style={{fontSize:'35px' }}>
+                 Samarqand viloyati Samarqand tumani <br/>{this.state.school.school_number+'-'+ this.state.school.type}</h1>
 
                  <a target="_blank" href={`tel: ${this.state.school.phone}`}>Biz bilan bog'laning</a>
              </Col>

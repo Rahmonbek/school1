@@ -85,7 +85,6 @@ export default class BoshSahifaDavomi extends Component {
 
   echoClasses = (id) => {
     var classes = {};
-    console.log(id, this.state.class);
     if (this.state.class !== []) {
       this.state.class.map((item1) => {
         if (item1.id === id) {
