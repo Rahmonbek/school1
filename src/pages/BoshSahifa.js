@@ -250,7 +250,7 @@ export default class BoshSahifa extends Component {
                  {/* <p>Sifat va qulay narxlar</p> */}
                 
                  <h1 style={{fontSize:'35px' }}>
-                 Samarqand viloyati Samarqand tumani <br/>{this.state.school.school_number+'-'+ this.state.school.type}</h1>
+                 Jizzax viloyati Sharof Rashidov tumani <br/>{this.state.school.school_number+'-'+ this.state.school.type}</h1>
 
                  <a target="_blank" href={`tel: ${this.state.school.phone}`}>Biz bilan bog'laning</a>
              </Col>
