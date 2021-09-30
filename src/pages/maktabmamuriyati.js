@@ -70,37 +70,42 @@ export default class Maktabmamuriyati extends Component {
         var yetakchi = [];
         var chqbt = [];
         res.data.map((item) => {
-          if (item.speciality.length !== 0) {
-            item.speciality.map((item1) => {
-              if (item1 === 2) {
-                direktor.push(item);
+          if(item.speciality.length!==0){
+            item.speciality.map(item1=>{
+              if(item1===3){
+                direktor.push(item)
               }
-              if (item1 === 3) {
-                orin1.push(item);
+              if(item1===4){
+                orin1.push(item)
               }
-              if (item1 === 4) {
-                orin2.push(item);
+              if(item1===5){
+                orin2.push(item)
               }
-              if (item1 === 5) {
-                orin3.push(item);
+              if(item1===9){
+                orin3.push(item)
               }
-              if (item1 === 6) {
-                psixolog.push(item);
+              if(item1===6){
+                
+                psixolog.push(item)
               }
-              if (item1 === 7) {
-                yetakchi.push(item);
+              if(item1===7){
+                yetakchi.push(item)
               }
-              if (item1 === 8) {
-                kutubxona.push(item);
+              if(item1===8){
+              
+                kutubxona.push(item)
               }
-              if (item1 === 9) {
-                kasaba.push(item);
+              if(item1===9){
+              
+                kasaba.push(item)
               }
-              if (item1 === 10) {
-                chqbt.push(item);
+              if(item1===10){
+                chqbt.push(item)
               }
-            });
+    
+            })
           }
+    
         });
         this.setState({
           direktor: direktor,
