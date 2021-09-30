@@ -250,7 +250,7 @@ export default class BoshSahifa extends Component {
                  {/* <p>Sifat va qulay narxlar</p> */}
                 
                  <h1 style={{fontSize:'35px' }}>
-                 Jizzax viloyati Sharof Rashidov tumani <br/>{this.state.school.school_number+'-'+ this.state.school.type}</h1>
+                 Xorazm viloyati Gurlan tumani {this.state.school.school_number+'-'+ this.state.school.type}</h1>
 
                  <a target="_blank" href={`tel: ${this.state.school.phone}`}>Biz bilan bog'laning</a>
              </Col>
@@ -345,44 +345,14 @@ data-aos="fade-bottom"
            
              </Col>
              <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha} style={{marginTop:'-10px'}}>
+             <div className={style.containercha}  style={{marginTop:'-10px'}}>
                   <img
                     src={
                       this.state.school !== null
-                        ? this.state.school.b_c3 !== null
-                          ? this.state.school.b_c3
-                          : rasm2
+                      ? this.state.school.b_c3 !== null
+                        ? this.state.school.b_c3
                         : rasm2
-                    }
-                    className={style.image}
-                  />
-                  <div className={style.overlay}>
-                      <h3> 
-                      Yutuqlarimiz<br/> <p>
-                      Sizda bizning maktabimiz yoshlari erishgan yutuqlari bilan tanishib chiqish
-                      uchun qulay imkoniyat bor
-                      </p></h3>
-                     
-                   
-                    <Link className={style.sah} to={`/yangiliklar/`}>
-                    Sahifaga o'tish 
-                    </Link>
-                 <br/>  
-                  </div>
-
-                </div>
-             
-           
-             </Col>
-             <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha}>
-                  <img
-                    src={
-                      this.state.school !== null
-                        ? this.state.school.b_c1 !== null
-                          ? this.state.school.b_c1
-                          : rasm2
-                        : rasm2
+                      : rasm2
                     }
                     className={style.image}
                   />
@@ -394,7 +364,7 @@ data-aos="fade-bottom"
                       </p></h3>
                      
                    
-                    <Link className={style.sah} to={`/yangiliklar/`}>
+                    <Link className={style.sah} to={`/gallery/`}>
                     Sahifaga o'tish 
                     </Link>
                  <br/>  
@@ -405,6 +375,36 @@ data-aos="fade-bottom"
            
              </Col>
           
+             <Col lg={4} md={6} sm={12}> 
+             <div className={style.containercha}>
+                  <img
+                    src={
+                      this.state.school !== null
+                      ? this.state.school.b_c1 !== null
+                        ? this.state.school.b_c1
+                        : rasm2
+                      : rasm2
+                    }
+                    className={style.image}
+                  />
+                  <div className={style.overlay}>
+                      <h3> 
+                      Yutuqlarimiz<br/> <p>
+                      Sizda bizning biz erishgan yutuqlar bilan tanishib chiqish imkoniyat bor
+                      </p></h3>
+                     
+                   
+                    <Link className={style.sah} to={`/yutuqlar/`}>
+                    Sahifaga o'tish 
+                    </Link>
+                 <br/>  
+                  </div>
+
+                </div>
+             
+           
+             </Col>
+           
            </Row>
 
            </div>
