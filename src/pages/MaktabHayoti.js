@@ -16,7 +16,7 @@ import school10 from "../img/school10.jpg";
 import school11 from "../img/school11.jpg";
 import school12 from "../img/school12.jpg";
 import school13 from "../img/school13.jpg";
-import { Tooltip} from "antd";
+import { Tooltip } from "antd";
 import school1 from "../img/school1.jpg";
 
 import style from "./BoshSahifa.module.css";
@@ -27,8 +27,7 @@ import { BiStop, BiRightArrowAlt } from "react-icons/bi";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link, NavLink } from "react-router-dom";
-import { Button,Nav, Navbar,} from "react-bootstrap";
-
+import { Button, Nav, Navbar } from "react-bootstrap";
 
 import {
   faDoorOpen,
@@ -83,8 +82,7 @@ export default class MaktabHayoti extends Component {
           </div>
         ) : (
           <>
-        
-        <div className="iconsHead">
+            <div className="iconsHead">
               <div>
                 <Tooltip placement="left" title="ittower01@gmail.com">
                   {" "}
@@ -173,100 +171,113 @@ export default class MaktabHayoti extends Component {
               </div>
             </div>
             <div className={style.header}>
-                <div className={style.navT}>
+              <div className={style.navT}>
                 <Navbar expand="lg">
-  <Container className={style.navT_item}>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
-    <Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
-      <Nav className="me-auto" className={style.navT_nav}>
-      <NavLink className={style.nlik} to={`/`}>
-                    <span className={style.lik}>Bosh sahifa</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/hayot/`}>
-                    <span className={style.lik}>Maktab hayoti</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/qabul/`}>
-                    <span className={style.lik}>Qabul</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/yangiliklar/`}>
-                    <span className={style.lik}>Yangiliklar</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/rahbariyat/`}>
-                    <span className={style.lik}>Maktab ma'muriyati</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/alochilar/`}>
-                    <span className={style.lik}>Maktab a'lochilari</span>
-                  </NavLink>
-              
-        
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-</div>
-<Container><Row>
-             <Col lg={5} md={5} sm={12} className={style.head_textCol}>
-                 {/* <p>Sifat va qulay narxlar</p> */}
-                 <h1>Maktabimiz hayoti bilan tanishing.</h1>
+                  <Container className={style.navT_item}>
+                    <Navbar.Toggle
+                      aria-controls="basic-navbar-nav"
+                      style={{ border: "none", zIndex: 4567 }}
+                    />
+                    <Navbar.Collapse
+                      id="basic-navbar-nav"
+                      className={style.jkr}
+                    >
+                      <Nav className="me-auto" className={style.navT_nav}>
+                        <NavLink className={style.nlik} to={`/`}>
+                          <span className={style.lik}>Bosh sahifa</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/hayot/`}>
+                          <span className={style.lik}>Maktab hayoti</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/qabul/`}>
+                          <span className={style.lik}>Qabul</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                          <span className={style.lik}>Yangiliklar</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                          <span className={style.lik}>Maktab ma'muriyati</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/alochilar/`}>
+                          <span className={style.lik}>Maktab a'lochilari</span>
+                        </NavLink>
+                      </Nav>
+                    </Navbar.Collapse>
+                  </Container>
+                </Navbar>
+              </div>
+              <Container>
+                <Row>
+                  <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+                    {/* <p>Sifat va qulay narxlar</p> */}
+                    <h1>Maktabimiz hayoti bilan tanishing.</h1>
 
-                 <a target="_blank" href={`tel: ${this.state.data.phone}`}>Biz bilan bog'laning</a>
-             </Col>
-             <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
-             <div className={style.head_img}>
-           
-             <div className={style.comp}>
-
-              <img src={   data !== null && data.m_h_h2 !== null
-                      ? data.m_h_h2
-                      : school1}/>
-                  
-       
-              </div> 
-             </div>
-             </Col>
-             </Row></Container><div className={style.di}></div>
-        
-</div>
-<div className={style.navG} 
-data-aos="fade-bottom"
-     data-aos-anchor-placement="bottom-top"
-     >
-<Navbar style={{position:"relative"}}expand="lg">
- 
-<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
-            <div class={style.brand_text}>
-               <p>{this.state.data.school_number} - maktab</p>
-               </div>
-            </NavLink></Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav"
-     style={{zIndex:345, borderColor:'white'}} />
-    <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
-    <Nav className="me-auto" className={style.navT_nav}>
-      <NavLink className={style.navLik} to={`/`}>
-                    <span className={style.lik}>Bosh sahifa</span>
+                    <a target="_blank" href={`tel: ${this.state.data.phone}`}>
+                      Biz bilan bog'laning
+                    </a>
+                  </Col>
+                  <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+                    <div className={style.head_img}>
+                      <div className={style.comp}>
+                        <img
+                          src={
+                            data !== null && data.m_h_h2 !== null
+                              ? data.m_h_h2
+                              : school1
+                          }
+                        />
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+              <div className={style.di}></div>
+            </div>
+            <div
+              className={style.navG}
+              data-aos="fade-bottom"
+              data-aos-anchor-placement="bottom-top"
+            >
+              <Navbar style={{ position: "relative" }} expand="lg">
+                <Navbar.Brand>
+                  <NavLink
+                    className={style.navB}
+                    style={{ color: "white", textDecoration: "none" }}
+                    to="/"
+                  >
+                    <div class={style.brand_text}>
+                      <p>{this.state.data.school_number} - maktab</p>
+                    </div>
                   </NavLink>
-                  <NavLink className={style.navLik} to={`/hayot/`}>
-                    <span className={style.lik}>Maktab hayoti</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/qabul/`}>
-                    <span className={style.lik}>Qabul</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/yangiliklar/`}>
-                    <span className={style.lik}>Yangiliklar</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/rahbariyat/`}>
-                    <span className={style.lik}>Maktab ma'muriyati</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/alochilar/`}>
-                    <span className={style.lik}>Maktab a'lochilari</span>
-                  </NavLink>
-              
-        
-      </Nav>
-    </Navbar.Collapse>
-
-</Navbar>
-</div>
+                </Navbar.Brand>
+                <Navbar.Toggle
+                  aria-controls="basic-navbar-nav"
+                  style={{ zIndex: 345, borderColor: "white" }}
+                />
+                <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+                  <Nav className="me-auto" className={style.navT_nav}>
+                    <NavLink className={style.navLik} to={`/`}>
+                      <span className={style.lik}>Bosh sahifa</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/hayot/`}>
+                      <span className={style.lik}>Maktab hayoti</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/qabul/`}>
+                      <span className={style.lik}>Qabul</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                      <span className={style.lik}>Yangiliklar</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                      <span className={style.lik}>Maktab ma'muriyati</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/alochilar/`}>
+                      <span className={style.lik}>Maktab a'lochilari</span>
+                    </NavLink>
+                  </Nav>
+                </Navbar.Collapse>
+              </Navbar>
+            </div>
 
             <Container fluid className={styles.secondContainer} id="1">
               <Row>
@@ -552,10 +563,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>Maktab oshxonasi</h1>
@@ -601,10 +613,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>Sport mashg'ulotlari</h1>
@@ -652,10 +665,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>San'at va madaniyat</h1>
@@ -701,10 +715,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>Axborot texnologiyalari</h1>
@@ -750,10 +765,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>Xavfsizlik va qo'riqlash</h1>
@@ -800,10 +816,11 @@ data-aos="fade-bottom"
                       />
                       <div
                         style={{
-                           background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))',
+                          background:
+                            "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
                           marginTop: "30px",
                           padding: "10%",
-                          height: "380px",
+                          height: "450px",
                         }}
                       >
                         <h1>Sog'lik va salomatlik</h1>
@@ -851,7 +868,11 @@ data-aos="fade-bottom"
                       md={6}
                       sm={12}
                       className={styles.director}
-                      style={{  background:'linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))', padding: "10%" }}
+                      style={{
+                        background:
+                          "linear-gradient(rgba(72, 142, 247, 0.974),rgba(3, 52, 177, 0.981),rgb(5, 47, 138), rgb(3, 25, 99))",
+                        padding: "10%",
+                      }}
                     >
                       <p>
                         {data.m_h_o !== null && data !== null
@@ -870,7 +891,6 @@ data-aos="fade-bottom"
                 </Col>
               </Row>
             </Container>
-            
           </>
         )}
       </div>

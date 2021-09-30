@@ -29,9 +29,10 @@
 }
 .paramumic_data h2 {
   align-self: flex-start;
+  font-size: 30px;
 }
 .paramumic_data h4 {
-  font-size: 25px;
+  font-size: 20px;
 }
 .malumot_sppiner {
   height: 100vh;
@@ -39,4 +40,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 576px) {
+  .paramumic_data h2 {
+    font-size: 22px;
+  }
+  .paramumic_data h4 {
+    font-size: 18px;
+  }
 }
