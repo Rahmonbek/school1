@@ -268,3 +268,8 @@ body{
         margin-right: 30px;
     }
 } 
+@media (min-width:1000px)  {
+    #tut {
+     background-color: red;
+    }
+  }
