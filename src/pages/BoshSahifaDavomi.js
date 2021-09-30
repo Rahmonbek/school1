@@ -47,9 +47,8 @@ export default class BoshSahifaDavomi extends Component {
       this.setState({ data: res.data });
     });
     axios
-      .get(`${url}/class-by-school/${Global.schoolId}/`)
+      .get(`${url}/class/`)
       .then((res) => {
-        console.log(res.data);
         this.setState({
           class: res.data,
           loader: false,
@@ -144,7 +143,7 @@ export default class BoshSahifaDavomi extends Component {
                 <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
                   A'lochilar doskasi
                 </h1>
-<div className={style.line}></div>
+                <div className={style.line}></div>
                 <Container className={style.back}>
                   {/* <div className={style.line}></div> */}
                   <br />
@@ -232,7 +231,7 @@ export default class BoshSahifaDavomi extends Component {
                 <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
                   O'qituvchilar doskasi
                 </h1>
-<div className={style.line}></div>
+                <div className={style.line}></div>
 
                 <Container className={style.back}>
                   {/* <div className={style.line}></div> */}
