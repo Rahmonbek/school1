@@ -2,24 +2,22 @@ import React, { Component } from "react";
 import styles from "../css/maktabmamuriyati.module.css";
 // import Car from "react-multi-Car";
 // import "react-multi-carousel/lib/styles.css";
-import { Carousel as Car } from "antd";
+
 import school1 from "../img/school19.jpg";
-import school2 from "../img/school20.jpg";
-import school3 from "../img/school25.jpg";
-import school4 from "../img/school13.jpg";
+
 import { Container, Row, Col } from "react-bootstrap";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import Aos from "aos";
 import "aos/dist/aos.css";
 // import {FadeLoader} from 'react-spinners'
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+
 import axios from "axios";
 import { url, user } from "../host/Host";
-import { Carousel } from "react-bootstrap";
+
 import Global from "../host/Global";
 import { FadeLoader } from "react-spinners";
 import { Tooltip } from "antd";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import {NavLink} from 'react-router-dom'
 // import school1 from "../img/school1.jpg";
 import {
