@@ -333,8 +333,8 @@ export default class MaktabTadbirlari extends Component {
                   {/* <div className="brand-title">TWITTER</div> */}
                   <div className="inputs">
                     <form>
-                      <label>F.I.O.</label>
-                      <input type="text" placeholder="Ism Familiya Otchistva" />
+                      <label>F.I.Sh.</label>
+                      <input type="text" placeholder="Familya Ism Sharif" />
                       <label>Telefon raqam</label>
                       <input type="text" placeholder="+998 99 999 99 99" />
                       <label>Murojaat</label>

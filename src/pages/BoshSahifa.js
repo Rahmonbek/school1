@@ -124,10 +124,17 @@ export default class BoshSahifa extends Component {
         ) : (
           <div>
             {/* <NavBar/> */}
-        
+
             <div className="iconsHead">
               <div>
-                <Tooltip placement="left" title="ittower01@gmail.com">
+                <Tooltip
+                  placement="left"
+                  title={`${
+                    this.state.school !== null
+                      ? this.state.school.email
+                      : "ittower01@gmail.com"
+                  }`}
+                >
                   {" "}
                   <a
                     target="_blank"
@@ -151,7 +158,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/samarqand_33_maktab"
+                  href="https://t.me/Xorazm_5_maktab"
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -161,7 +168,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/33_maktab_official/"
+                  href="https://www.instagram.com/5ummumtalimmaktabi/"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -171,7 +178,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+                  href="https://www.facebook.com/5-sonli-maktab-283432626789189/?ref=pages_you_manage"
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -181,7 +188,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+                  href="https://www.youtube.com/channel/UCTU9AVjpeZQLSSh3rlwTpDw"
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
@@ -199,7 +206,7 @@ export default class BoshSahifa extends Component {
                     href={`tel: ${
                       this.state.school !== null
                         ? this.state.school.phone
-                        : "+998 93 082 03 72"
+                        : "+998 97 790 28 01"
                     }`}
                   >
                     <FontAwesomeIcon
@@ -214,201 +221,217 @@ export default class BoshSahifa extends Component {
               </div>
             </div>
             <div className={style.header}>
-                <div className={style.navT}>
+              <div className={style.navT}>
                 <Navbar expand="lg">
-  <Container className={style.navT_item}>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{border:'none', zIndex:4567}} />
-    <Navbar.Collapse id="basic-navbar-nav" className={style.jkr} >
-      <Nav className="me-auto" className={style.navT_nav}>
-      <NavLink className={style.nlik} to={`/`}>
-                    <span className={style.lik}>Bosh sahifa</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/hayot/`}>
-                    <span className={style.lik}>Maktab hayoti</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/qabul/`}>
-                    <span className={style.lik}>Qabul</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/yangiliklar/`}>
-                    <span className={style.lik}>Yangiliklar</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/rahbariyat/`}>
-                    <span className={style.lik}>Maktab ma'muriyati</span>
-                  </NavLink>
-                  <NavLink className={style.nlik} to={`/alochilar/`}>
-                    <span className={style.lik}>Maktab a'lochilari</span>
-                  </NavLink>
-              
-        
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
-</div>
-<Container><Row>
-             <Col lg={5} md={5} sm={12} className={style.head_textCol}>
-                 {/* <p>Sifat va qulay narxlar</p> */}
-                
-                 <h1 style={{fontSize:'35px' }}>
-                 Xorazm viloyati Gurlan tumani {this.state.school.school_number+'-'+ this.state.school.type}</h1>
+                  <Container className={style.navT_item}>
+                    <Navbar.Toggle
+                      aria-controls="basic-navbar-nav"
+                      style={{ border: "none", zIndex: 4567 }}
+                    />
+                    <Navbar.Collapse
+                      id="basic-navbar-nav"
+                      className={style.jkr}
+                    >
+                      <Nav className="me-auto" className={style.navT_nav}>
+                        <NavLink className={style.nlik} to={`/`}>
+                          <span className={style.lik}>Bosh sahifa</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/hayot/`}>
+                          <span className={style.lik}>Maktab hayoti</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/qabul/`}>
+                          <span className={style.lik}>Qabul</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/yangiliklar/`}>
+                          <span className={style.lik}>Yangiliklar</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/rahbariyat/`}>
+                          <span className={style.lik}>Maktab ma'muriyati</span>
+                        </NavLink>
+                        <NavLink className={style.nlik} to={`/alochilar/`}>
+                          <span className={style.lik}>Maktab a'lochilari</span>
+                        </NavLink>
+                      </Nav>
+                    </Navbar.Collapse>
+                  </Container>
+                </Navbar>
+              </div>
+              <Container>
+                <Row>
+                  <Col lg={5} md={5} sm={12} className={style.head_textCol}>
+                    {/* <p>Sifat va qulay narxlar</p> */}
 
-                 <a target="_blank" href={`tel: ${this.state.school.phone}`}>Biz bilan bog'laning</a>
-             </Col>
-             <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
-             <div className={style.head_img}>
-           
-             <div className={style.comp}>
+                    <h1>
+                      Xorazm viloyati Gurlan tumani{" "}
+                      {this.state.school.school_number +
+                        "-" +
+                        this.state.school.type}
+                    </h1>
 
-              <img src={this.state.school!==null?this.state.school.b_r1:rasm1}/>
-                  
-       
-              </div> 
-             </div>
-             </Col>
-             </Row></Container><div className={style.di}></div>
-        
-</div>
-<div className={style.navG} 
-data-aos="fade-bottom"
-     data-aos-anchor-placement="bottom-top"
-     >
-<Navbar style={{position:"relative"}}expand="lg">
- 
-<Navbar.Brand><NavLink className={style.navB} style={{color:'white', textDecoration:'none'}} to="/"> 
-            <div class={style.brand_text}>
-               <p>{this.state.school.school_number} - maktab</p>
-               </div>
-            </NavLink></Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav"
-     style={{zIndex:345, borderColor:'white'}} />
-    <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
-    <Nav className="me-auto" className={style.navT_nav}>
-      <NavLink className={style.navLik} to={`/`}>
-                    <span className={style.lik}>Bosh sahifa</span>
+                    <a target="_blank" href={`tel: ${this.state.school.phone}`}>
+                      Biz bilan bog'laning
+                    </a>
+                  </Col>
+                  <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
+                    <div className={style.head_img}>
+                      <div className={style.comp}>
+                        <img
+                          src={
+                            this.state.school !== null
+                              ? this.state.school.b_r1
+                              : rasm1
+                          }
+                        />
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
+              <div className={style.di}></div>
+            </div>
+            <div
+              className={style.navG}
+              data-aos="fade-bottom"
+              data-aos-anchor-placement="bottom-top"
+            >
+              <Navbar style={{ position: "relative" }} expand="lg">
+                <Navbar.Brand>
+                  <NavLink
+                    className={style.navB}
+                    style={{ color: "white", textDecoration: "none" }}
+                    to="/"
+                  >
+                    <div class={style.brand_text}>
+                      <p>{this.state.school.school_number} - maktab</p>
+                    </div>
                   </NavLink>
-                  <NavLink className={style.navLik} to={`/hayot/`}>
-                    <span className={style.lik}>Maktab hayoti</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/qabul/`}>
-                    <span className={style.lik}>Qabul</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/yangiliklar/`}>
-                    <span className={style.lik}>Yangiliklar</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/rahbariyat/`}>
-                    <span className={style.lik}>Maktab ma'muriyati</span>
-                  </NavLink>
-                  <NavLink className={style.navLik} to={`/alochilar/`}>
-                    <span className={style.lik}>Maktab a'lochilari</span>
-                  </NavLink>
-              
-        
-      </Nav>
-    </Navbar.Collapse>
+                </Navbar.Brand>
+                <Navbar.Toggle
+                  aria-controls="basic-navbar-nav"
+                  style={{ zIndex: 345, borderColor: "white" }}
+                />
+                <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
+                  <Nav className="me-auto" className={style.navT_nav}>
+                    <NavLink className={style.navLik} to={`/`}>
+                      <span className={style.lik}>Bosh sahifa</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/hayot/`}>
+                      <span className={style.lik}>Maktab hayoti</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/qabul/`}>
+                      <span className={style.lik}>Qabul</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/yangiliklar/`}>
+                      <span className={style.lik}>Yangiliklar</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/rahbariyat/`}>
+                      <span className={style.lik}>Maktab ma'muriyati</span>
+                    </NavLink>
+                    <NavLink className={style.navLik} to={`/alochilar/`}>
+                      <span className={style.lik}>Maktab a'lochilari</span>
+                    </NavLink>
+                  </Nav>
+                </Navbar.Collapse>
+              </Navbar>
+            </div>
 
-</Navbar>
-</div>
-
-       
             {/* <div className="oq"></div> */}
             <div className={style.container}>
-           <Row>
-           <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha}>
-                  <img
-                    src={
-                      this.state.school !== null
-                        ? this.state.school.b_c2 !== null
-                          ? this.state.school.b_c2
+              <Row>
+                <Col lg={4} md={6} sm={12}>
+                  <div className={style.containercha}>
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.b_c2 !== null
+                            ? this.state.school.b_c2
+                            : rasm2
                           : rasm2
-                        : rasm2
-                    }
-                    className={style.image}
-                  />
-                  <div className={style.overlay}>
-                      <h3> 
-                   Yangiliklar<br/>
-                      <p>
-                        Maktabimizga doir bo'lgan yangiliklardan xabardor
-                        bo'ling
-                      </p></h3>
-                     
-                      
-                    <Link  className={style.sah} to={`/yangiliklar/`}>
-                      Sahifaga o'tish
-                    </Link>
-                 <br/>  
+                      }
+                      className={style.image}
+                    />
+                    <div className={style.overlay}>
+                      <h3>
+                        Yangiliklar
+                        <br />
+                        <p>
+                          Maktabimizga doir bo'lgan yangiliklardan xabardor
+                          bo'ling
+                        </p>
+                      </h3>
+
+                      <Link className={style.sah} to={`/yangiliklar/`}>
+                        Sahifaga o'tish
+                      </Link>
+                      <br />
+                    </div>
                   </div>
+                </Col>
+                <Col lg={4} md={6} sm={12}>
+                  <div
+                    className={style.containercha}
+                    style={{ marginTop: "-10px" }}
+                  >
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.b_c3 !== null
+                            ? this.state.school.b_c3
+                            : rasm2
+                          : rasm2
+                      }
+                      className={style.image}
+                    />
+                    <div className={style.overlay}>
+                      <h3>
+                        Fotolavhalar
+                        <br />{" "}
+                        <p>
+                          Endi siz maktabimizning fotolavhalarini ko'rishingiz
+                          mumkin
+                        </p>
+                      </h3>
 
-                </div>
-             
-           
-             </Col>
-             <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha}  style={{marginTop:'-10px'}}>
-                  <img
-                    src={
-                      this.state.school !== null
-                      ? this.state.school.b_c3 !== null
-                        ? this.state.school.b_c3
-                        : rasm2
-                      : rasm2
-                    }
-                    className={style.image}
-                  />
-                  <div className={style.overlay}>
-                      <h3> 
-                   Fotolavhalar<br/> <p>
-                   Endi siz maktabimizning fotolavhalarini ko'rishingiz
-                        mumkin
-                      </p></h3>
-                     
-                   
-                    <Link className={style.sah} to={`/gallery/`}>
-                    Sahifaga o'tish 
-                    </Link>
-                 <br/>  
+                      <Link className={style.sah} to={`/gallery/`}>
+                        Sahifaga o'tish
+                      </Link>
+                      <br />
+                    </div>
                   </div>
+                </Col>
 
-                </div>
-             
-           
-             </Col>
-          
-             <Col lg={4} md={6} sm={12}> 
-             <div className={style.containercha}>
-                  <img
-                    src={
-                      this.state.school !== null
-                      ? this.state.school.b_c1 !== null
-                        ? this.state.school.b_c1
-                        : rasm2
-                      : rasm2
-                    }
-                    className={style.image}
-                  />
-                  <div className={style.overlay}>
-                      <h3> 
-                      Yutuqlarimiz<br/> <p>
-                      Sizda bizning biz erishgan yutuqlar bilan tanishib chiqish imkoniyat bor
-                      </p></h3>
-                     
-                   
-                    <Link className={style.sah} to={`/yutuqlar/`}>
-                    Sahifaga o'tish 
-                    </Link>
-                 <br/>  
+                <Col lg={4} md={6} sm={12}>
+                  <div className={style.containercha}>
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.b_c1 !== null
+                            ? this.state.school.b_c1
+                            : rasm2
+                          : rasm2
+                      }
+                      className={style.image}
+                    />
+                    <div className={style.overlay}>
+                      <h3>
+                        Yutuqlarimiz
+                        <br />{" "}
+                        <p>
+                          Sizda bizning biz erishgan yutuqlar bilan tanishib
+                          chiqish imkoniyat bor
+                        </p>
+                      </h3>
+
+                      <Link className={style.sah} to={`/yutuqlar/`}>
+                        Sahifaga o'tish
+                      </Link>
+                      <br />
+                    </div>
                   </div>
+                </Col>
+              </Row>
+            </div>
 
-                </div>
-             
-           
-             </Col>
-           
-           </Row>
-
-           </div>
-  
             <div className={style.containerRow}>
               <Row>
                 <Col xs={12} sm={12} md={4} lg={4} className={style.col}>
@@ -442,8 +465,10 @@ data-aos="fade-bottom"
                 </Col>
 
                 <Col xs={12} sm={12} md={8} lg={8} className={style.col}>
-                  <h3  className={style.tit}>Maktabdagi yangiliklari va o'zgarishlar</h3>
-<div className={style.chiziq}></div>
+                  <h3 className={style.tit}>
+                    Maktabdagi yangiliklari va o'zgarishlar
+                  </h3>
+                  <div className={style.chiziq}></div>
                   <Row>
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <Row>
@@ -474,16 +499,15 @@ data-aos="fade-bottom"
                                     paddingRight: "8px",
                                   }}
                                 >
-                                                  <Link to={`/yangiliklar/`}>
-
-                                  <p>{item.title}</p>
-                                  <h5>
-                                    <i
-                                      style={{ marginRight: "10px" }}
-                                      className="far fa-calendar-alt"
-                                    ></i>
-                                    {item.published_time.substring(0, 10)}
-                                  </h5>
+                                  <Link to={`/yangiliklar/`}>
+                                    <p>{item.title}</p>
+                                    <h5>
+                                      <i
+                                        style={{ marginRight: "10px" }}
+                                        className="far fa-calendar-alt"
+                                      ></i>
+                                      {item.published_time.substring(0, 10)}
+                                    </h5>
                                   </Link>
                                 </Col>
                               </Row>
@@ -495,7 +519,7 @@ data-aos="fade-bottom"
                       </Row>
                     </Col>
                   </Row>
-<br/>
+                  <br />
                   <Link to={`/yangiliklar/`}>
                     <button className={style.buttoncha}>
                       <span>Barchasini o'qish</span>
