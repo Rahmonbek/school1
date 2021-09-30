@@ -18,8 +18,8 @@ import { Carousel } from "react-bootstrap";
 import Global from "../host/Global";
 import { FadeLoader } from "react-spinners";
 import { Tooltip } from "antd";
-import { Button, Nav, NavLink, Navbar } from "react-bootstrap";
-
+import { Button, Nav, Navbar } from "react-bootstrap";
+import {NavLink} from 'react-router-dom'
 // import school1 from "../img/school1.jpg";
 import {
   faDoorOpen,
@@ -257,24 +257,24 @@ export default class Maktabmamuriyati extends Component {
                       className={style.jkr}
                     >
                       <Nav className="me-auto" className={style.navT_nav}>
-                        <Nav.Link className={style.nlik} to="/">
+                        <NavLink className={style.nlik} to="/">
                           <span className={style.lik}>Bosh sahifa</span>
-                        </Nav.Link>
-                        <Nav.Link className={style.nlik} to="/hayot/">
+                        </NavLink>
+                        <NavLink className={style.nlik} to="/hayot/">
                           <span className={style.lik}>Maktab hayoti</span>
-                        </Nav.Link>
-                        <Nav.Link className={style.nlik} to="/qabul/">
+                        </NavLink>
+                        <NavLink className={style.nlik} to="/qabul/">
                           <span className={style.lik}>Qabul</span>
-                        </Nav.Link>
-                        <Nav.Link className={style.nlik} to="/yangiliklar/">
+                        </NavLink>
+                        <NavLink className={style.nlik} to="/yangiliklar/">
                           <span className={style.lik}>Yangiliklar</span>
-                        </Nav.Link>
-                        <Nav.Link className={style.nlik} to="/rahbariyat/">
+                        </NavLink>
+                        <NavLink className={style.nlik} to="/rahbariyat/">
                           <span className={style.lik}>Maktab ma'muriyati</span>
-                        </Nav.Link>
-                        <Nav.Link className={style.nlik} to="/alochilar/">
+                        </NavLink>
+                        <NavLink className={style.nlik} to="/alochilar/">
                           <span className={style.lik}>Maktab a'lochilari</span>
-                        </Nav.Link>
+                        </NavLink>
                       </Nav>
                     </Navbar.Collapse>
                   </Container>
@@ -319,7 +319,7 @@ export default class Maktabmamuriyati extends Component {
             >
               <Navbar style={{ position: "relative" }} expand="lg">
                 <Navbar.Brand>
-                  <Nav.Link
+                  <NavLink
                     className={style.navB}
                     style={{ color: "white", textDecoration: "none" }}
                     to="/"
@@ -332,7 +332,7 @@ export default class Maktabmamuriyati extends Component {
                         - maktab
                       </p>
                     </div>
-                  </Nav.Link>
+                  </NavLink>
                 </Navbar.Brand>
                 <Navbar.Toggle
                   aria-controls="basic-navbar-nav"
@@ -340,24 +340,24 @@ export default class Maktabmamuriyati extends Component {
                 />
                 <Navbar.Collapse id="basic-navbar-nav" className={style.htr}>
                   <Nav className="me-auto" className={style.navT_nav}>
-                    <Nav.Link className={style.navLik} to="/">
+                    <NavLink className={style.navLik} to="/">
                       <span className={style.lik}>Bosh sahifa</span>
-                    </Nav.Link>
-                    <Nav.Link className={style.navLik} to="/hayot/">
+                    </NavLink>
+                    <NavLink className={style.navLik} to="/hayot/">
                       <span className={style.lik}>Maktab hayoti</span>
-                    </Nav.Link>
-                    <Nav.Link className={style.navLik} to="/qabul/">
+                    </NavLink>
+                    <NavLink className={style.navLik} to="/qabul/">
                       <span className={style.lik}>Qabul</span>
-                    </Nav.Link>
-                    <Nav.Link className={style.navLik} to="/yangiliklar/">
+                    </NavLink>
+                    <NavLink className={style.navLik} to="/yangiliklar/">
                       <span className={style.lik}>Yangiliklar</span>
-                    </Nav.Link>
-                    <Nav.Link className={style.navLik} to="/rahbariyat/">
+                    </NavLink>
+                    <NavLink className={style.navLik} to="/rahbariyat/">
                       <span className={style.lik}>Maktab ma'muriyati</span>
-                    </Nav.Link>
-                    <Nav.Link className={style.navLik} to="/alochilar/">
+                    </NavLink>
+                    <NavLink className={style.navLik} to="/alochilar/">
                       <span className={style.lik}>Maktab a'lochilari</span>
-                    </Nav.Link>
+                    </NavLink>
                   </Nav>
                 </Navbar.Collapse>
               </Navbar>
