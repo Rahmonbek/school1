@@ -363,7 +363,7 @@ export default class Maktabmamuriyati extends Component {
               </Navbar>
             </div>
             <Container>
-              <Row style={{minHeight:'1700px'}}> 
+              <Row> 
                 {this.state.direktor !== null
                   ? this.state.direktor.map((item) => {
                       return (
