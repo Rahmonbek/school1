@@ -100,7 +100,7 @@ export default class Alochilar extends Component {
 
   componentDidMount() {
     Aos.init({
-      duration: 2000,
+      duration: 4000,
     });
     this.getExcellents();
     this.getPupil();
