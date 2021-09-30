@@ -283,8 +283,8 @@ data-aos="fade-bottom"
 
                     <p>
                       {this.state.school !== null
-                        ? this.state.school.q_talim !== null
-                          ? this.state.school.q_talim
+                        ? this.state.school.q_t !== null
+                          ? this.state.school.q_t
                           : "Qabul jarayonlari bo'yicha tavsilotlar"
                         : "Qabul jarayonlari bo'yicha tavsilotlar"}
                     </p>
