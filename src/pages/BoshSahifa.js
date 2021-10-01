@@ -194,7 +194,7 @@ export default class BoshSahifa extends Component {
                 </a>
               </div>
               <div>
-                <Tooltip placement="left" title="+998 93 082 03 72">
+                <Tooltip placement="left" title="+998 97 790 28 01">
                   {" "}
                   <a
                     target="_blank"
