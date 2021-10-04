@@ -264,11 +264,11 @@ export default class BoshSahifa extends Component {
                   </Container>
                 </Navbar>
               </div>
-              <Container>
-                <Row>
+              <Container className={style.CentreMenuGroup}>
+                <Row className={style.CentreMenuItemRow}>
+                  
                   <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                     {/* <p>Sifat va qulay narxlar</p> */}
-
                     <h1>
                       Xorazm viloyati Gurlan tumani{" "}
                       {this.state.school.school_number +
