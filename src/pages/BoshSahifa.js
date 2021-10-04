@@ -32,7 +32,7 @@ import bg1t from "../img/bg1t.jpg";
 import bg2t from "../img/bg2t.jpg";
 import bg3t from "../img/bg3t.jpg";
 import "../App.css";
-import { Tooltip, Carousel } from "antd";
+import { Tooltip, Carousel, message } from "antd";
 import style from "./BoshSahifa.module.css";
 import { Link, NavLink } from "react-router-dom";
 import BoshSahifaDavomi from "./BoshSahifaDavomi";
@@ -102,7 +102,9 @@ export default class BoshSahifa extends Component {
       this.setState({
         loader: false,
       });
+  
     });
+    window.alert('Sayt test rejimida ishlamoqda!!!')
     setInterval(() => {
       this.setState({ clock: Clock() });
     }, 1000);
