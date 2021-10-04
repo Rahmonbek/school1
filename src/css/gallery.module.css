@@ -202,6 +202,13 @@ display: none;
   left: 0;
   transform-origin: left;
 }
+.imagewrapper:hover img {
+  -ms-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  transition: .5s;
+  cursor: pointer;
+}
 .image1 {
   clip-path: polygon(0 0, 0 32%, 28% 0);
   transform: translate(1px, -60px);

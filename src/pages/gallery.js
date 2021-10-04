@@ -6,6 +6,7 @@ import img3 from "../img/b3.jpg";
 import img4 from "../img/b4.jpg";
 import img5 from "../img/b5.jpg";
 import img6 from "../img/b6.jpg";
+import Xorazm from "../img/xorazm1.jpg";
 import img7 from "../img/b7.png";
 import FadeLoader from "react-spinners/FadeLoader";
 import { idMaktab, url, user } from "../host/Host";
@@ -56,11 +57,12 @@ export default class Gallery extends Component {
               <img
                 alt=" "
                 src={
-                  this.state.school !== null
-                    ? this.state.school.foto !== null
-                      ? this.state.school.foto
-                      : img1
-                    : img1
+                  Xorazm
+                  // this.state.school !== null
+                  //   ? this.state.school.foto !== null
+                  //     ? this.state.school.foto
+                  //     : img1
+                  //   : img1
                 }
                 style={{ width: "100%", height: "100%" }}
               />
@@ -74,7 +76,8 @@ export default class Gallery extends Component {
               <Row style={{ justifyContent: "center" }}>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    <img src={img1} className="img-fluid" />
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -117,12 +120,14 @@ export default class Gallery extends Component {
                             : img2
                           : img2
                       }
-                    />
+                    /> */}
                   </div>{" "}
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    <img src={img2} className="img-fluid" />
+
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -165,11 +170,13 @@ export default class Gallery extends Component {
                             : img3
                           : img3
                       }
-                    />
+                    /> */}
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
+                    <img src={img3} className="img-fluid" />
+                    {/* 
                     <img
                       alt=" "
                       class={style.image1}
@@ -213,12 +220,14 @@ export default class Gallery extends Component {
                             : img4
                           : img4
                       }
-                    />
+                    /> */}
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    <img src={img4} className="img-fluid" />
+
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -261,12 +270,12 @@ export default class Gallery extends Component {
                             : img5
                           : img5
                       }
-                    />
+                    /> */}
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -309,12 +318,13 @@ export default class Gallery extends Component {
                             : img6
                           : img6
                       }
-                    />
+                    /> */}
+                    <img src={img5} className="img-fluid" />
                   </div>
                 </Col>
                 <Col lg={6} md={12} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -357,12 +367,14 @@ export default class Gallery extends Component {
                             : img6
                           : img6
                       }
-                    />
+                    /> */}
+                    <img src={img6} className="img-fluid" />
                   </div>
                 </Col>
                 <Col lg={6} md={12} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img
+                    <img src={img7} className="img-fluid" />
+                    {/* <img
                       alt=" "
                       class={style.image1}
                       src={
@@ -404,8 +416,8 @@ export default class Gallery extends Component {
                             ? this.state.school.foto7
                             : img6
                           : img6
-                      }
-                    />
+                      } 
+                    />*/}
                   </div>
                 </Col>
               </Row>

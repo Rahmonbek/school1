@@ -184,6 +184,9 @@
   padding-bottom: 30px;
   margin-top: -5vh;
 }
+#containerChaCentre {
+  margin-top: -5%;
+}
 .containercha {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -269,6 +272,17 @@
   font-size: 1.5rem;
   letter-spacing: 2px;
   font-style: italic;
+}
+@media(min-width:1800px) {
+  .container .containercha {
+    margin-top: -15%;
+    border: 1px solid black;
+
+  }
+
+  #containerChaCentre {
+    margin-top: -18%;
+  }
 }
 @media (max-width: 500px) {
   .col .pp {
