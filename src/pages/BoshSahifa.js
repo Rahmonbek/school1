@@ -104,7 +104,7 @@ export default class BoshSahifa extends Component {
       });
   
     });
-    window.alert('Sayt test rejimida ishlamoqda!!!')
+    // window.alert('Sayt test rejimida ishlamoqda!!!')
     setInterval(() => {
       this.setState({ clock: Clock() });
     }, 1000);
@@ -122,6 +122,8 @@ export default class BoshSahifa extends Component {
         {this.state.loader ? (
           <div className="loaderT">
             <FadeLoader color="blue" loading={this.state.loader} size={120} />
+            <div><p>Sayt test rejimida ishlamoqda</p></div>
+        
           </div>
         ) : (
           <div>
