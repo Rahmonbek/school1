@@ -162,7 +162,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/Xorazm_5_maktab"
+                  href="https://t.me/xorazm_1_maktab"
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -172,7 +172,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/5ummumtalimmaktabi/"
+                  href="https://www.instagram.com/1sonliMaktab/"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -182,7 +182,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/5-sonli-maktab-283432626789189/?ref=pages_you_manage"
+                  href="https://www.facebook.com/1-ummumtalim-maktabi-101082082351444"
                 >
                   <i className="fab fa-facebook"></i>
                 </a>

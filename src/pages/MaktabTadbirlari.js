@@ -291,7 +291,7 @@ export default class MaktabTadbirlari extends Component {
                     height="400px"
                     // style={{marginLeft:"10%"}}
                     state={{
-                      center: [39.651698, 66.97187],
+                      center: [41.552486, 60.620890],
                       zoom: 13,
                     }}
                   >
