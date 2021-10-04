@@ -55,6 +55,7 @@ export default class Gallery extends Component {
             <br />
             <div className={style.header}>
               <img
+                className={style.headerImgItem}
                 alt=" "
                 src={
                   Xorazm
@@ -64,7 +65,6 @@ export default class Gallery extends Component {
                   //     : img1
                   //   : img1
                 }
-                style={{ width: "100%", height: "100%" }}
               />
               <div className={style.sarlavha}>
                 <h2>Bizning Fotogalareya</h2>

@@ -8,6 +8,24 @@
 .mat{
     width: 100%;
 }
+.headerImgItem {
+  width: 100%;
+  height: 100%;
+
+}
+
+@media(min-width:767px) and(max-width:1023px) {
+
+
+  .headerImgItem {
+    width: 150%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center center;
+  }
+}
 @media(min-width:648px){
 .header{
   position: relative;
