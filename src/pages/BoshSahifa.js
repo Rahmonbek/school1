@@ -374,7 +374,7 @@ export default class BoshSahifa extends Component {
                 <Col lg={4} md={6} sm={12}>
                   <div
                     className={style.containercha}
-                    style={{ marginTop: "-10px" }}
+                    id={style.containerChaCentre}
                   >
                     <img
                       src={
