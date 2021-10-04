@@ -102,7 +102,6 @@ export default class BoshSahifa extends Component {
       this.setState({
         loader: false,
       });
-  
     });
     // window.alert('Sayt test rejimida ishlamoqda!!!')
     setInterval(() => {
@@ -122,8 +121,9 @@ export default class BoshSahifa extends Component {
         {this.state.loader ? (
           <div className="loaderT">
             <FadeLoader color="blue" loading={this.state.loader} size={120} />
-            <div><p>Sayt test rejimida ishlamoqda</p></div>
-        
+            <div>
+              <p>Sayt test rejimida ishlamoqda</p>
+            </div>
           </div>
         ) : (
           <div>
@@ -229,8 +229,12 @@ export default class BoshSahifa extends Component {
                 <Navbar expand="lg">
                   <Container className={style.navT_item}>
                     <Navbar.Toggle
+                      className={style.NavbarCollapse}
                       aria-controls="basic-navbar-nav"
-                      style={{ border: "none", zIndex: 4567 }}
+                      style={{
+                        border: "none",
+                        zIndex: 4567,
+                      }}
                     />
                     <Navbar.Collapse
                       id="basic-navbar-nav"
