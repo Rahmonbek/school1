@@ -302,7 +302,7 @@ export default class MaktabTadbirlari extends Component {
                     >
                       <Placemark
                         key={-1}
-                        geometry={[39.651698, 66.97187]}
+                        geometry={[41.552486, 60.620890]}
                         options={{
                           iconLayout: "default#image",
                         }}
