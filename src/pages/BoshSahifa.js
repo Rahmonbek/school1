@@ -136,7 +136,7 @@ export default class BoshSahifa extends Component {
                   title={`${
                     this.state.school !== null
                       ? this.state.school.email
-                      : "ittower01@gmail.com"
+                      : "5maktabjizzax@gmail.com"
                   }`}
                 >
                   {" "}
@@ -147,7 +147,7 @@ export default class BoshSahifa extends Component {
                     href={`mailto: ${
                       this.state.school !== null
                         ? this.state.school.email
-                        : "ittower01@gmail.com"
+                        : "5maktabjizzax@gmail.com"
                     }`}
                   >
                     <FontAwesomeIcon
@@ -162,7 +162,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://bit.ly/39Qt87k"
+                  href="https://t.me/jizzax_5maktab"
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -172,7 +172,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://bit.ly/3B2suzE"
+                  href="https://www.instagram.com/5_maktabi/"
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -182,7 +182,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://bit.ly/3ojl7QJ"
+                  href="https://www.facebook.com/5-ummumtalim-maktabi-101172302348628"
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -192,7 +192,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://bit.ly/39QGOPL"
+                  href="https://www.youtube.com/channel/UCp_Rf6x5SwyzjSsvF1AHicg"
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
