@@ -87,8 +87,8 @@ export default class MaktabHayoti extends Component {
                 <Tooltip
                   placement="left"
                   title={`${
-                    this.state.school !== null
-                      ? this.state.school.email
+                    this.state.data !== null && this.state.data.email!==null
+                      ? this.state.data.email
                       : "ittower01@gmail.com"
                   }`}
                 >
@@ -98,8 +98,8 @@ export default class MaktabHayoti extends Component {
                     style={{ borderRadius: "10px 0px 0px 0px" }}
                     className="ahref"
                     href={`mailto: ${
-                      this.state.school !== null
-                        ? this.state.school.email
+                      this.state.data !== null && this.state.data.email!==null
+                        ? this.state.data.email
                         : "ittower01@gmail.com"
                     }`}
                   >
@@ -161,8 +161,8 @@ export default class MaktabHayoti extends Component {
                       borderRadius: "0px 0px 0px 10px",
                     }}
                     href={`tel: ${
-                      this.state.school !== null
-                        ? this.state.school.phone
+                      this.state.data !== null
+                        ? this.state.data.phone
                         : "+998 97 790 28 01"
                     }`}
                   >

@@ -270,7 +270,7 @@ export default class BoshSahifa extends Component {
                   <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                     {/* <p>Sifat va qulay narxlar</p> */}
                     <h1>
-                      Xorazm viloyati Gurlan tumani{" "}
+                      {this.state.school.address}{" "}
                       {this.state.school.school_number +
                         "-" +
                         this.state.school.type}
