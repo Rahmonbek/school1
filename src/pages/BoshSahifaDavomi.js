@@ -17,7 +17,7 @@ import { getExcellent, getPupil } from "../host/Config";
 
 import { url, user } from "../host/Host";
 import Global from "../host/Global";
-import {Map} from './Map'
+// import {Map} from './Map'
 export default class BoshSahifaDavomi extends Component {
   state = {
     loader: true,
@@ -108,9 +108,9 @@ export default class BoshSahifaDavomi extends Component {
    
     return (
       <div>
-        <div className={style.mapD} style={{width:'100%', height:'300px', position:'relative', marginBottom:'100px'}}>
+        {/* <div className={style.mapD} style={{width:'100%', height:'300px', position:'relative', marginBottom:'100px'}}>
    <Map/>
-        </div>
+        </div> */}
         <div className={style.container}>
           <Container>
 
