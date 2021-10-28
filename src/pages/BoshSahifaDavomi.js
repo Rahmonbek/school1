@@ -15,7 +15,7 @@ import styles from "../css/alochilar.module.css";
 
 import { getExcellent, getPupil } from "../host/Config";
 
-import { url, user } from "../host/Host";
+import { idMaktab, url, user } from "../host/Host";
 import Global from "../host/Global";
 // import {Map} from './Map'
 export default class BoshSahifaDavomi extends Component {
@@ -34,7 +34,7 @@ export default class BoshSahifaDavomi extends Component {
     // var a = window.location.href.split("/");
     var v = user;
     axios
-      .get(`${url}/excellent/`)
+      .get(`${url}/excellent/${idMaktab}`)
       .then((res) => {
         this.setState({
           excellent: res.data,
@@ -105,7 +105,6 @@ export default class BoshSahifaDavomi extends Component {
   }
 
   render() {
-   
     return (
       <div>
         {/* <div className={style.mapD} style={{width:'100%', height:'300px', position:'relative', marginBottom:'100px'}}>
@@ -113,7 +112,6 @@ export default class BoshSahifaDavomi extends Component {
         </div> */}
         <div className={style.container}>
           <Container>
-
             <Row>
               <Col xs={0} sm={0} md={6} lg={6}></Col>
               <Col xs={12} sm={12} md={6} lg={6}>
