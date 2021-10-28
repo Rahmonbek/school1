@@ -156,7 +156,7 @@ export default class Maktabmamuriyati extends Component {
             <br />
             <br />
             <div className="iconsHead">
-            <div>
+              <div>
                 <Tooltip
                   placement="left"
                   title={`${
@@ -188,7 +188,7 @@ export default class Maktabmamuriyati extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/jizzax_5maktab"
+                  href={this.state.data!==null?this.state.data.telegram:""}
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -198,7 +198,7 @@ export default class Maktabmamuriyati extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/5_maktabi/"
+                  href={this.state.data!==null?this.state.data.instagram:""}
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -208,7 +208,7 @@ export default class Maktabmamuriyati extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/5-ummumtalim-maktabi-101172302348628"
+                  href={this.state.data!==null?this.state.data.facebook:""}
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -218,7 +218,7 @@ export default class Maktabmamuriyati extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.youtube.com/channel/UCp_Rf6x5SwyzjSsvF1AHicg"
+                  href={this.state.data!==null?this.state.data.youtube:""}
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
@@ -248,7 +248,8 @@ export default class Maktabmamuriyati extends Component {
                     />
                   </a>{" "}
                 </Tooltip>
-              </div></div>
+              </div>
+            </div>
             <div className={style.header} style={{ marginTop: "-60px" }}>
               <div className={style.navT}>
                 <Navbar expand="lg">

@@ -741,18 +741,18 @@ export const sinf9=[
   
    ]
    export const sinf2=[
-    {
-          "title":"Atrofimizdagi olam",
-          "img":"https://eduportal.uz/Content/DocumentFiles/5a12058810b545019e427e6a814f56af.jpg",
-          "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-          "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/atrofimizdagi_olam_2_uzb.pdf"
-      },
-      {
-          "title":"Matematika",
-          "img":"https://eduportal.uz/Content/DocumentFiles/9cfdb42149a24753b9f98610803772cd.jpg",
-          "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-          "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/matematika_2_uzb.pdf"
-      },
+    // {
+    //       "title":"Atrofimizdagi olam",
+    //       "img":"https://eduportal.uz/Content/DocumentFiles/5a12058810b545019e427e6a814f56af.jpg",
+    //       "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //       "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/atrofimizdagi_olam_2_uzb.pdf"
+    //   },
+    //   {
+    //       "title":"Matematika",
+    //       "img":"https://eduportal.uz/Content/DocumentFiles/9cfdb42149a24753b9f98610803772cd.jpg",
+    //       "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //       "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/matematika_2_uzb.pdf"
+    //   },
       {
           "title":"Ingliz tili",
           "img":"https://www.test-uz.ru/images/books/389/3_preview.jpg",
@@ -777,12 +777,12 @@ export const sinf9=[
         "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
         "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/oqish_kitobi_2_uzb.pdf"
     },
-    {
-        "title":"Rus tili",
-        "img":"https://eduportal.uz/Content/DocumentFiles/34eb820678f0442b98d6e940c6524303.jpg",
-        "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-        "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/rus_tili_2_uzb.pdf"
-    },
+    // {
+    //     "title":"Rus tili",
+    //     "img":"https://eduportal.uz/Content/DocumentFiles/34eb820678f0442b98d6e940c6524303.jpg",
+    //     "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //     "url":"http://eduportal.uz/Umumiyfiles/darsliklar/2/rus_tili_2_uzb.pdf"
+    // },
     {
         "title":"Tarbiya",
         "img":"https://tarbiyam.uz/storage/thumbnails/default/1qt/lsn79f09w0w0wgcswoc40k.jpg?p=%2Fapp%2Fpublic%2F258%2F2sinfquova.jpg&s=s",
@@ -806,24 +806,24 @@ export const sinf9=[
           "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
           "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/alifbe_1_uzb.pdf"
       },
-      {
-          "title":"Atrofimizdagi olam",
-          "img":"https://eduportal.uz/Content/DocumentFiles/49a805e6cf854a15904ee614d0952f98.jpg",
-          "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-          "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/atrofimizdagi_olam_1_uzb.pdf"
-      },
-      {
-          "title":"Ingliz tili",
-          "img":"https://online-maktab.uz/api/file/3e598db8-afe8-41ac-aad3-a8353aadbfe5",
-          "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-          "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/ingliz_tili_1_uzb.pdf"
-      },
-      {
-          "title":"Matematika",
-          "img":"https://eduportal.uz/Content/DocumentFiles/64e2f2a0c7774fa38d7b99d4ea022953.PNG",
-          "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
-          "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/matematika_1_uzb.pdf"
-      },
+    //   {
+    //       "title":"Atrofimizdagi olam",
+    //       "img":"https://eduportal.uz/Content/DocumentFiles/49a805e6cf854a15904ee614d0952f98.jpg",
+    //       "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //       "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/atrofimizdagi_olam_1_uzb.pdf"
+    //   },
+    //   {
+    //       "title":"Ingliz tili",
+    //       "img":"https://online-maktab.uz/api/file/3e598db8-afe8-41ac-aad3-a8353aadbfe5",
+    //       "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //       "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/ingliz_tili_1_uzb.pdf"
+    //   },
+    //   {
+    //       "title":"Matematika",
+    //       "img":"https://eduportal.uz/Content/DocumentFiles/64e2f2a0c7774fa38d7b99d4ea022953.PNG",
+    //       "text":"  Biz bilan o`zizga kerakli bo`lgan darslik kitoblarizni telefon kampyuterlar uchun mo`ljallangan verziyalarini topishingiz mumkin. Kerakli kitobni tanlsh uxhun yuklab olish tugmasini bosing",
+    //       "url":"http://eduportal.uz/Umumiyfiles/darsliklar/1/matematika_1_uzb.pdf"
+    //   },
     {
         "title":"Odobnoma",
         "img":"https://kitobxon.com/img_knigi/s1159.jpg",

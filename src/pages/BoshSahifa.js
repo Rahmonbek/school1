@@ -66,6 +66,7 @@ export default class BoshSahifa extends Component {
       this.setState({
         school: res.data,
       });
+      // console.log(res.data)
       setTimeout(() => {
         this.setState({
           loader: false,
@@ -165,7 +166,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/jizzax_5maktab"
+                  href={this.state.school!==null?this.state.school.telegram:""}
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -175,7 +176,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/5_maktabi/"
+                  href={this.state.school!==null?this.state.school.instagram:""}
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -185,7 +186,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/5-ummumtalim-maktabi-101172302348628"
+                  href={this.state.school!==null?this.state.school.facebook:""}
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -195,7 +196,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.youtube.com/channel/UCp_Rf6x5SwyzjSsvF1AHicg"
+                  href={this.state.school!==null?this.state.school.youtube:""}
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
