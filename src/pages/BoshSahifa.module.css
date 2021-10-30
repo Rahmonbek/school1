@@ -566,6 +566,32 @@ height: 300px;
 .tit{
   font-size: 40px;
 }
+.colNews p{
+  font-size: 28px;
+}
+.colNews i{
+  font-size: 28px;
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+.colNews {
+  height: 160px;
+}
+.colNews  .rasm{
+  width: 150px;
+  height: 120px;
+}
+.overlay p{
+font-size: 25px !important;
+}
+
+
+
+
+
+
+
+
 
 
 }

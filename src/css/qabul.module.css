@@ -516,3 +516,36 @@ body {
     font-size: 10 px;
   }
 }
+
+
+
+@media (min-width:1650px){
+  .info h3{
+    font-size: 60px !important;
+  }
+  .info p, .tavsilottext p{
+    font-size: 30px !important;
+  }
+  .muddat_text1 p{
+    font-size: 40px;
+  }
+  .muddat_text1 h3{
+    font-size: 40px;
+    margin-top: 3%;
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
