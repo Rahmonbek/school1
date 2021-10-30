@@ -547,3 +547,30 @@
     display: none;
   }
 }
+
+
+@media (min-width:1650px){
+  .lik{
+    font-size: 24px;
+  }
+  .containercha img{
+height: 300px;
+  }
+  .overlay h3{
+    font-size: 42px;
+  }
+  .overlay p{
+    font-size: 30px;
+  }
+
+.tit{
+  font-size: 40px;
+}
+
+
+}
+
+
+
+
+

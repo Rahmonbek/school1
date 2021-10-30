@@ -143,7 +143,7 @@ export default class BoshSahifaDavomi extends Component {
               <div className={style.tana}>
                 <br />
                 <br />
-                <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
+                <h1 className={style.sarlavha} style={{ fontSize: "30px" }}>
                   A'lochilar doskasi
                 </h1>
                 <div className={style.line}></div>
@@ -173,7 +173,7 @@ export default class BoshSahifaDavomi extends Component {
                                 />
                                 <p
                                   style={{
-                                    fontSize: "20px",
+                                    // fontSize: "20px",
                                     textAlign: "center",
                                     marginTop: "20px",
                                     fontWeight: "bold",
@@ -184,7 +184,7 @@ export default class BoshSahifaDavomi extends Component {
                                 </p>
                                 <p
                                   style={{
-                                    fontSize: "18px",
+                                    // fontSize: "18px",
                                     color: "black",
                                     textAlign: "center",
                                   }}
@@ -231,7 +231,7 @@ export default class BoshSahifaDavomi extends Component {
               <div className={style.tana}>
                 <br />
                 <br />
-                <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
+                <h1 className={style.sarlavha} style={{ fontSize: "30px" }}>
                   O'qituvchilar doskasi
                 </h1>
                 <div className={style.line}></div>
@@ -251,7 +251,7 @@ export default class BoshSahifaDavomi extends Component {
                             <Col lg={7}>
                               <p
                                 style={{
-                                  fontSize: "20px",
+                                  // fontSize: "20px",
                                   marginTop: "20px",
                                   marginLeft: "20px",
                                   fontWeight: "bold",
@@ -264,7 +264,7 @@ export default class BoshSahifaDavomi extends Component {
 
                               <p
                                 style={{
-                                  fontSize: "18px",
+                                  // fontSize: "18px",
                                   color: "black",
                                   marginLeft: "20px",
                                 }}
@@ -292,7 +292,7 @@ export default class BoshSahifaDavomi extends Component {
                             <Col lg={7}>
                               <p
                                 style={{
-                                  fontSize: "20px",
+                                  // fontSize: "20px",
                                   marginTop: "20px",
                                   marginLeft: "20px",
                                   fontWeight: "bold",
@@ -305,7 +305,7 @@ export default class BoshSahifaDavomi extends Component {
 
                               <p
                                 style={{
-                                  fontSize: "18px",
+                                  // fontSize: "18px",
                                   color: "black",
                                   marginLeft: "20px",
                                 }}

@@ -13,7 +13,6 @@
     font-family: "Space Mono", monospace;
     font-size: 22px;
     transition: 0.3s;
-  
     user-select: none;
   }
   details > div {
@@ -207,3 +206,43 @@
    width: 100%;
  }
 }
+
+
+@media (min-width:1650px){
+.section{
+  width: 130%;
+  font-size: 45px;
+}
+
+
+.kitob{
+  margin-right: 30px;
+  margin-left: 30px;
+  display: block;
+  width: 40%;
+ 
+}
+.kitob img{
+  height: 100%;
+
+}
+.sharh h3{
+  font-size: 33px;
+}
+.sharh p{
+  font-size: 25px;
+}
+.sharh Button{
+  width: 200px;
+  height: 60px;
+}
+
+
+
+}
+
+
+
+
+
+
