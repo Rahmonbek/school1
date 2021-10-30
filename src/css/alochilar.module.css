@@ -134,7 +134,23 @@
   }
 }
 @media (min-width: 1650px){
-  .headerSliderText h3{
-    font-size: 90px !important;
+  .content p {
+    font-size:30px !important ;
   }
+  .content{
+   width: 60% !important;
+   margin-left: 10%;
+   margin-top: 5%;
+  }
+  .card{
+    width: 45%;
+    height: 300px;
+    margin-top: 0%;
+  }
+ .card .image img{
+   width: 250px;
+   height: 250px;
+   margin-top: 5%;
+   margin-left: 5%;
+ }
 }
