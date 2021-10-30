@@ -303,15 +303,15 @@ export default class Maktabmamuriyati extends Component {
                   </Col>
                   <Col lg={7} md={7} sm={12} className={style.head_imgCol}>
                     <div className={style.head_img}>
-                      <div className={style.comp}>
-                        {/* <img
+                      {/* <div className={style.comp}>
+                        <img
                           src={
-                            this.state.direktor !== null
-                              ? this.state.direktor[0].image
+                            this.state.direktor !==null &&
+                             this.state.direktor[0] !==null image
                               : school1
                           }
-                        /> */}
-                      </div>
+                        />
+                      </div> */}
                     </div>
                   </Col>
                 </Row>

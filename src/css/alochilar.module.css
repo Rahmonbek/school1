@@ -133,3 +133,8 @@
     height: auto;
   }
 }
+@media (min-width: 1650px){
+  .headerSliderText h3{
+    font-size: 90px !important;
+  }
+}
