@@ -181,6 +181,12 @@
 
 }
 
+.sharh p{
+  margin-top:20px;
+  font-size:18px;
+
+}
+
 @media (max-width:600px){
   .cart{
    

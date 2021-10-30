@@ -60,12 +60,18 @@ export default class BoshSahifa extends Component {
     id: 0,
     school: null,
     clock: "00 : 00 : 00",
+    region:null
   };
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${Global.user}`).then((res) => {
       this.setState({
         school: res.data,
       });
+      axios.get(`${url}/region/${res.data.region}`).then(res1=>{
+        this.setState({
+          region:res1.data
+        })
+      })
       // console.log(res.data)
       setTimeout(() => {
         this.setState({
@@ -274,10 +280,8 @@ export default class BoshSahifa extends Component {
                   <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                     {/* <p>Sifat va qulay narxlar</p> */}
                     <h1>
-                      {this.state.school.address}{" "}
-                      {this.state.school.school_number +
-                        "-" +
-                        this.state.school.type}
+                    {this.state.region!==null?this.state.region.address:''} {this.state.region!==null?this.state.region.region_name:''} tumani <br/> {this.state.school!==null?this.state.school.school_number:''} - {this.state.school!==null?this.state.school.type:''}
+
                     </h1>
 
                     <a target="_blank" href={`tel: ${this.state.school.phone}`}>
