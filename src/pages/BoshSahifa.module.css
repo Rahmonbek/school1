@@ -585,7 +585,11 @@ height: 300px;
 font-size: 25px !important;
 }
 
-
+.head_textCol h1{
+  font-size: 60px;
+  width: 130%;
+  margin-left: -20%;
+}
 
 
 
