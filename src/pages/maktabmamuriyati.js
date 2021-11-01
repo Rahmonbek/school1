@@ -106,6 +106,9 @@ export default class Maktabmamuriyati extends Component {
           }
     
         });
+        console.log(
+          direktor
+        )
         this.setState({
           direktor: direktor,
           orin1: orin1,
@@ -306,8 +309,7 @@ export default class Maktabmamuriyati extends Component {
                       <div className={style.comp}>
                         <img
                           src={
-                            this.state.direktor !==null &&
-                             this.state.direktor[0] !==null
+                            this.state.direktor !==null && this.state.direktor.length!==0
                              ? this.state.direktor[0].image
                               : school1
                           }
