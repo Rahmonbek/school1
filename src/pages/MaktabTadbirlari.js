@@ -291,7 +291,7 @@ export default class MaktabTadbirlari extends Component {
                     height="400px"
                     // style={{marginLeft:"10%"}}
                     state={{
-                      center: [41.552486, 60.620890],
+                      center: [41.552486, 60.62089],
                       zoom: 13,
                     }}
                   >
@@ -302,7 +302,7 @@ export default class MaktabTadbirlari extends Component {
                     >
                       <Placemark
                         key={-1}
-                        geometry={[41.552486, 60.620890]}
+                        geometry={[41.552486, 60.62089]}
                         options={{
                           iconLayout: "default#image",
                         }}
@@ -334,7 +334,7 @@ export default class MaktabTadbirlari extends Component {
                   <div className="inputs">
                     <form>
                       <label>F.I.Sh.</label>
-                      <input type="text" placeholder="Familya Ism Sharif" />
+                      <input type="text" placeholder="Familya Ism Sharifi" />
                       <label>Telefon raqam</label>
                       <input type="text" placeholder="+998 99 999 99 99" />
                       <label>Murojaat</label>
