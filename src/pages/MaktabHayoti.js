@@ -82,9 +82,17 @@ export default class MaktabHayoti extends Component {
           </div>
         ) : (
           <>
+            
             <div className="iconsHead">
               <div>
-                <Tooltip placement="left" title="ittower01@gmail.com">
+                <Tooltip
+                  placement="left"
+                  title={`${
+                    this.state.data !== null
+                      ? this.state.data.email
+                      : "5maktabjizzax@gmail.com"
+                  }`}
+                >
                   {" "}
                   <a
                     target="_blank"
@@ -93,7 +101,7 @@ export default class MaktabHayoti extends Component {
                     href={`mailto: ${
                       this.state.data !== null
                         ? this.state.data.email
-                        : "ittower01@gmail.com"
+                        : "5maktabjizzax@gmail.com"
                     }`}
                   >
                     <FontAwesomeIcon
@@ -108,7 +116,7 @@ export default class MaktabHayoti extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/samarqand_33_maktab"
+                  href={this.state.data!==null?this.state.data.telegram:""}
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -118,7 +126,7 @@ export default class MaktabHayoti extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/33_maktab_official/"
+                  href={this.state.data!==null?this.state.data.instagram:""}
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -128,7 +136,7 @@ export default class MaktabHayoti extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
+                  href={this.state.data!==null?this.state.data.facebook:""}
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -138,13 +146,13 @@ export default class MaktabHayoti extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
+                  href={this.state.data!==null?this.state.data.youtube:""}
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
               <div>
-                <Tooltip placement="left" title="+998 93 082 03 72">
+                <Tooltip placement="left" title="+998 97 790 28 01">
                   {" "}
                   <a
                     target="_blank"
@@ -156,7 +164,7 @@ export default class MaktabHayoti extends Component {
                     href={`tel: ${
                       this.state.data !== null
                         ? this.state.data.phone
-                        : "+998 93 082 03 72"
+                        : "+998 97 790 28 01"
                     }`}
                   >
                     <FontAwesomeIcon

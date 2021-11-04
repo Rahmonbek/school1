@@ -259,3 +259,47 @@
     font-size: 1rem;
   }
 }
+
+@media (min-width: 1650px) {
+  .container h2{
+    font-size: 42px;
+    margin-top: 2%;
+  }
+  
+  .redIcon1{
+    width:100px;
+  }
+  .redIcon2{width: 100%;
+  }
+  .map h3{
+    font-size: 35px;
+  }
+  .barchasiniKurish{
+    margin-top: 2%;
+    font-size: 28px;
+  }
+  .sarlavha{
+    font-size: 45px;
+    margin-top: 2%;
+  }
+.toolpat{
+  width: 170px;
+  height: 150px;
+}
+.sliderHomiy p{
+  font-size: 22px ;
+}
+ label{
+  font-size: 19px;
+}
+.innerMap{
+  font-size: 25px;
+}
+.innerMap .redIcon1, .innerMap .redIcon2{
+  font-size: 30px;
+}
+
+
+
+
+}

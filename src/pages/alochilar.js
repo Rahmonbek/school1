@@ -13,7 +13,7 @@ import school4 from "../img/school4.jpg";
 import school5 from "../img/school5.jpg";
 import Aos from "aos";
 import { getExcellent, getPupil } from "../host/Config";
-import { url, user } from "../host/Host";
+import { idMaktab, url, user } from "../host/Host";
 import { FadeLoader } from "react-spinners";
 import Global from "../host/Global";
 
@@ -33,7 +33,7 @@ export default class Alochilar extends Component {
     // var a = window.location.href.split("/");
     var v = user;
     axios
-      .get(`${url}/excellent/`)
+      .get(`${url}/excellent/${idMaktab}`)
       .then((res) => {
         this.setState({
           excellent: res.data,

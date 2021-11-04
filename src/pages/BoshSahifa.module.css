@@ -109,7 +109,7 @@
   background-color: blue;
 
   display: inline-block;
-  margin-top: 60px;
+  margin-top: 40px;
 
   text-align: center;
 
@@ -547,3 +547,60 @@
     display: none;
   }
 }
+
+
+@media (min-width:1650px){
+  .lik{
+    font-size: 24px;
+  }
+  .containercha img{
+height: 300px;
+  }
+  .overlay h3{
+    font-size: 42px;
+  }
+  .overlay p{
+    font-size: 30px;
+  }
+
+.tit{
+  font-size: 40px;
+}
+.colNews p{
+  font-size: 28px;
+}
+.colNews i{
+  font-size: 28px;
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+.colNews {
+  height: 160px;
+}
+.colNews  .rasm{
+  width: 150px;
+  height: 120px;
+}
+.overlay p{
+font-size: 25px !important;
+}
+
+.head_textCol h1{
+  font-size: 60px;
+  width: 130%;
+  margin-left: -20%;
+}
+
+
+
+
+
+
+
+
+}
+
+
+
+
+

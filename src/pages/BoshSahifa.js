@@ -49,6 +49,9 @@ import headerT from "../img/priscilla-du-preez-XkKCui44iM0-unsplash.jpg";
 import YouTube from "react-youtube";
 import Global from "../host/Global";
 import { Clock } from "./Clock";
+import Darsliklar from "./Darsliklar";
+
+// import atrof  from "../img/sinf1/atrof.jpg"
 
 export default class BoshSahifa extends Component {
   state = {
@@ -57,12 +60,19 @@ export default class BoshSahifa extends Component {
     id: 0,
     school: null,
     clock: "00 : 00 : 00",
+    region:null
   };
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${Global.user}`).then((res) => {
       this.setState({
         school: res.data,
       });
+      axios.get(`${url}/region/${res.data.region}`).then(res1=>{
+        this.setState({
+          region:res1.data
+        })
+      })
+      // console.log(res.data)
       setTimeout(() => {
         this.setState({
           loader: false,
@@ -136,7 +146,7 @@ export default class BoshSahifa extends Component {
                   title={`${
                     this.state.school !== null
                       ? this.state.school.email
-                      : "ittower01@gmail.com"
+                      : "5maktabjizzax@gmail.com"
                   }`}
                 >
                   {" "}
@@ -147,7 +157,7 @@ export default class BoshSahifa extends Component {
                     href={`mailto: ${
                       this.state.school !== null
                         ? this.state.school.email
-                        : "ittower01@gmail.com"
+                        : "5maktabjizzax@gmail.com"
                     }`}
                   >
                     <FontAwesomeIcon
@@ -162,7 +172,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://t.me/xorazm_1_maktab"
+                  href={this.state.school!==null?this.state.school.telegram:""}
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -172,7 +182,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.instagram.com/1sonliMaktab/"
+                  href={this.state.school!==null?this.state.school.instagram:""}
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -182,7 +192,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.facebook.com/1-ummumtalim-maktabi-101082082351444"
+                  href={this.state.school!==null?this.state.school.facebook:""}
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -192,7 +202,7 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href="https://www.youtube.com/channel/UCTU9AVjpeZQLSSh3rlwTpDw"
+                  href={this.state.school!==null?this.state.school.youtube:""}
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
@@ -270,10 +280,8 @@ export default class BoshSahifa extends Component {
                   <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                     {/* <p>Sifat va qulay narxlar</p> */}
                     <h1>
-                      Xorazm viloyati Gurlan tumani{" "}
-                      {this.state.school.school_number +
-                        "-" +
-                        this.state.school.type}
+                    {this.state.region!==null?this.state.region.address:''} {this.state.region!==null?this.state.region.region_name:''} tumani <br/> {this.state.school!==null?this.state.school.school_number:''} - {this.state.school!==null?this.state.school.type:''}
+
                     </h1>
 
                     <a target="_blank" href={`tel: ${this.state.school.phone}`}>
@@ -536,6 +544,7 @@ export default class BoshSahifa extends Component {
                 </Col>
               </Row>
             </div>
+            <Darsliklar/>
             <BoshSahifaDavomi />
             <MaktabTadbirlari />
             <Footer />

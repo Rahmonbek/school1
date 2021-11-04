@@ -15,9 +15,9 @@ import styles from "../css/alochilar.module.css";
 
 import { getExcellent, getPupil } from "../host/Config";
 
-import { url, user } from "../host/Host";
+import { idMaktab, url, user } from "../host/Host";
 import Global from "../host/Global";
-
+// import {Map} from './Map'
 export default class BoshSahifaDavomi extends Component {
   state = {
     loader: true,
@@ -34,7 +34,7 @@ export default class BoshSahifaDavomi extends Component {
     // var a = window.location.href.split("/");
     var v = user;
     axios
-      .get(`${url}/excellent/`)
+      .get(`${url}/excellent/${idMaktab}`)
       .then((res) => {
         this.setState({
           excellent: res.data,
@@ -107,6 +107,9 @@ export default class BoshSahifaDavomi extends Component {
   render() {
     return (
       <div>
+        {/* <div className={style.mapD} style={{width:'100%', height:'300px', position:'relative', marginBottom:'100px'}}>
+   <Map/>
+        </div> */}
         <div className={style.container}>
           <Container>
             <Row>
@@ -140,7 +143,7 @@ export default class BoshSahifaDavomi extends Component {
               <div className={style.tana}>
                 <br />
                 <br />
-                <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
+                <h1 className={style.sarlavha} style={{ fontSize: "30px" }}>
                   A'lochilar doskasi
                 </h1>
                 <div className={style.line}></div>
@@ -170,7 +173,7 @@ export default class BoshSahifaDavomi extends Component {
                                 />
                                 <p
                                   style={{
-                                    fontSize: "20px",
+                                    // fontSize: "20px",
                                     textAlign: "center",
                                     marginTop: "20px",
                                     fontWeight: "bold",
@@ -181,7 +184,7 @@ export default class BoshSahifaDavomi extends Component {
                                 </p>
                                 <p
                                   style={{
-                                    fontSize: "18px",
+                                    // fontSize: "18px",
                                     color: "black",
                                     textAlign: "center",
                                   }}
@@ -228,7 +231,7 @@ export default class BoshSahifaDavomi extends Component {
               <div className={style.tana}>
                 <br />
                 <br />
-                <h1 className={style.sarlavha} style={{ fontSize: "28px" }}>
+                <h1 className={style.sarlavha} style={{ fontSize: "30px" }}>
                   O'qituvchilar doskasi
                 </h1>
                 <div className={style.line}></div>
@@ -248,7 +251,7 @@ export default class BoshSahifaDavomi extends Component {
                             <Col lg={7}>
                               <p
                                 style={{
-                                  fontSize: "20px",
+                                  // fontSize: "20px",
                                   marginTop: "20px",
                                   marginLeft: "20px",
                                   fontWeight: "bold",
@@ -261,7 +264,7 @@ export default class BoshSahifaDavomi extends Component {
 
                               <p
                                 style={{
-                                  fontSize: "18px",
+                                  // fontSize: "18px",
                                   color: "black",
                                   marginLeft: "20px",
                                 }}
@@ -289,7 +292,7 @@ export default class BoshSahifaDavomi extends Component {
                             <Col lg={7}>
                               <p
                                 style={{
-                                  fontSize: "20px",
+                                  // fontSize: "20px",
                                   marginTop: "20px",
                                   marginLeft: "20px",
                                   fontWeight: "bold",
@@ -302,7 +305,7 @@ export default class BoshSahifaDavomi extends Component {
 
                               <p
                                 style={{
-                                  fontSize: "18px",
+                                  // fontSize: "18px",
                                   color: "black",
                                   marginLeft: "20px",
                                 }}

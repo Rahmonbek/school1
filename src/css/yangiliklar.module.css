@@ -363,3 +363,24 @@ color: gray !important;}
        
     }
 }
+
+@media (min-width: 1650px){
+    .yangi h1{
+        font-size: 70px !important;
+    }
+
+    .news p, .news i{
+      font-size: 30px !important;
+    }
+    .news h3{
+font-size: 50px;
+    }
+    .title h3{
+        font-size: 40px;
+    }
+.body_card p, .body_card i{
+    font-size: 20px !important;
+}
+
+
+}

@@ -123,94 +123,102 @@ export default class Yangiliklar extends Component {
           </div>
         ) : (
           <>
- <div className="iconsHead">
-          <div>
-            <Tooltip placement="left" title="ittower01@gmail.com">
-              {" "}
-              <a
-                target="_blank"
-                style={{ borderRadius: "10px 0px 0px 0px" }}
-                className="ahref"
-                href={`mailto: ${
-                  this.state.school !== null
-                    ? this.state.school.email
-                    : "ittower01@gmail.com"
-                }`}
-              >
-                <FontAwesomeIcon
-                  icon={faEnvelope}
-                  style={{ fontSize: "25px" }}
-                />
-              </a>
-            </Tooltip>
-          </div>
-          <div>
-            <a
-              target="_blank"
-              style={{ borderTop: " 1px solid #1b6602" }}
-              className="ahref"
-              href="https://t.me/samarqand_33_maktab"
-            >
-              <i className="fab fa-telegram"></i>
-            </a>
-          </div>
-          <div>
-            <a
-              target="_blank"
-              style={{ borderTop: " 1px solid #1b6602" }}
-              className="ahref"
-              href="https://www.instagram.com/33_maktab_official/"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-          </div>
-          <div>
-            <a
-              target="_blank"
-              style={{ borderTop: " 1px solid #1b6602" }}
-              className="ahref"
-              href="https://www.facebook.com/people/Samarqand-Tuman-Idum/100072115398865/"
-            >
-              <i className="fab fa-facebook"></i>
-            </a>
-          </div>
-          <div>
-            <a
-              target="_blank"
-              style={{ borderTop: " 1px solid #1b6602" }}
-              className="ahref"
-              href="https://www.youtube.com/channel/UC4vQC9mOo5B6_imRFUA62Xg"
-            >
-              <i className="fab fa-youtube"></i>
-            </a>
-          </div>
-          <div>
-            <Tooltip placement="left" title="+998 93 082 03 72">
-              {" "}
-              <a
-                target="_blank"
-                className="ahref"
-                style={{
-                  borderTop: " 1px solid #1b6602",
-                  borderRadius: "0px 0px 0px 10px",
-                }}
-                href={`tel: ${
-                  this.state.school !== null
-                    ? this.state.school.phone
-                    : "+998 93 082 03 72"
-                }`}
-              >
-                <FontAwesomeIcon
-                  icon={faPhone}
-                  style={{
-                    fontSize: "25px",
-                    borderRadius: "0px 0px 0px 10px",
-                  }}
-                />
-              </a>{" "}
-            </Tooltip>
-          </div>
-        </div>
+          
+          <div className="iconsHead">
+              <div>
+                <Tooltip
+                  placement="left"
+                  title={`${
+                    this.state.school !== null
+                      ? this.state.school.email
+                      : "5maktabjizzax@gmail.com"
+                  }`}
+                >
+                  {" "}
+                  <a
+                    target="_blank"
+                    style={{ borderRadius: "10px 0px 0px 0px" }}
+                    className="ahref"
+                    href={`mailto: ${
+                      this.state.school !== null
+                        ? this.state.school.email
+                        : "5maktabjizzax@gmail.com"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      style={{ fontSize: "25px" }}
+                    />
+                  </a>
+                </Tooltip>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href={this.state.school!==null?this.state.school.telegram:""}
+                >
+                  <i className="fab fa-telegram"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href={this.state.school!==null?this.state.school.instagram:""}
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href={this.state.school!==null?this.state.school.facebook:""}
+                >
+                  <i className="fab fa-facebook"></i>
+                </a>
+              </div>
+              <div>
+                <a
+                  target="_blank"
+                  style={{ borderTop: " 1px solid #1b6602" }}
+                  className="ahref"
+                  href={this.state.school!==null?this.state.school.youtube:""}
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+              <div>
+                <Tooltip placement="left" title="+998 97 790 28 01">
+                  {" "}
+                  <a
+                    target="_blank"
+                    className="ahref"
+                    style={{
+                      borderTop: " 1px solid #1b6602",
+                      borderRadius: "0px 0px 0px 10px",
+                    }}
+                    href={`tel: ${
+                      this.state.school !== null
+                        ? this.state.school.phone
+                        : "+998 97 790 28 01"
+                    }`}
+                  >
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      style={{
+                        fontSize: "25px",
+                        borderRadius: "0px 0px 0px 10px",
+                      }}
+                    />
+                  </a>{" "}
+                </Tooltip>
+              </div>
+            </div>
         <div className={style.header}>
             <div className={style.navT}>
             <Navbar expand="lg">

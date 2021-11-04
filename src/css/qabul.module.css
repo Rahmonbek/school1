@@ -516,3 +516,54 @@ body {
     font-size: 10 px;
   }
 }
+
+
+
+@media (min-width:1650px){
+  .info h3{
+    font-size: 60px !important;
+  }
+  .info p, .tavsilottext p{
+    font-size: 30px !important;
+  }
+  .muddat_text1 p{
+    font-size: 28px;
+  }
+  .muddat_text1 h3{
+    font-size: 28px;
+    margin-top: 3%;
+  }
+  .muddat_text2 p{
+    font-size: 28px;
+  }
+  .muddat_text2 h3{
+    font-size: 28px;
+    margin-top: 3%;
+  }
+  .muddat_text3 p{
+    font-size: 28px;
+  }
+  .muddat_text3 h3{
+    font-size: 28px;
+    margin-top: 3%;
+  }
+  .hujjat_text p{
+    font-size: 30px !important;
+    margin-top: 7%;
+  }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+

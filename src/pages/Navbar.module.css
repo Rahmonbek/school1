@@ -197,3 +197,15 @@ justify-content: center;}
 
 
 }
+
+
+@media (min-width:1650px){
+  .maktabLogo{
+    font-size: 30px !important;
+}
+.meauto span{
+    font-size: 30px !important;
+
+}
+
+}
