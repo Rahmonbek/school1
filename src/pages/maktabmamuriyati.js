@@ -107,7 +107,8 @@ export default class Maktabmamuriyati extends Component {
     
         });
         console.log(
-          direktor
+          "Mana direktor",
+          orin1
         )
         this.setState({
           direktor: direktor,
@@ -135,6 +136,7 @@ export default class Maktabmamuriyati extends Component {
     });
     this.getStaff();
     this.getSchool();
+    
   }
 
   render() {

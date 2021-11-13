@@ -33,17 +33,29 @@ export default class BoshSahifaDavomi extends Component {
   getExcellents = () => {
     // var a = window.location.href.split("/");
     var v = user;
-    axios
-      .get(`${url}/excellent/${idMaktab}`)
-      .then((res) => {
-        this.setState({
-          excellent: res.data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    
     axios.get(`${url}/school-by-admin/${v}/`).then((res) => {
+      axios
+        .get(`${url}/excellent/`)
+        .then((res1) => {
+          let arrayOfExcellent=[]
+          res1.data.forEach(val=>{
+            if(val.school==res.data.id) arrayOfExcellent.push(val)
+          })
+          this.setState({
+            excellent: arrayOfExcellent,
+            loader: false,
+          });
+          /* ${idMaktab} */
+          console.log('Mana ular...', res1.data);
+        })
+        .catch((err) => {
+          console.log('err');
+          this.setState({
+            // excellent: res.data,
+            loader: false,
+          });
+        });
       this.setState({ data: res.data });
     });
     axios
@@ -155,7 +167,7 @@ export default class BoshSahifaDavomi extends Component {
                     {this.state.excellent !== [] && this.state.class !== []
                       ? this.state.excellent.map((item) => {
                           var pupil = this.setPupils(item.pupil);
-                          var classes = this.echoClasses(pupil.clas);
+                          var classes = this.echoClasses(item.clas);
                           return (
                             <Col lg={6} md={6} sm={12}>
                               <div
@@ -167,7 +179,7 @@ export default class BoshSahifaDavomi extends Component {
                                 </div>
                                 <img
                                   src={
-                                    pupil.image !== null ? pupil.image : school2
+                                    item.image !== null ? item.image : school2
                                   }
                                   alt=""
                                 />
@@ -180,7 +192,7 @@ export default class BoshSahifaDavomi extends Component {
                                     color: "black",
                                   }}
                                 >
-                                  {pupil.full_name}
+                                  {item.full_name}
                                 </p>
                                 <p
                                   style={{
@@ -188,10 +200,10 @@ export default class BoshSahifaDavomi extends Component {
                                     color: "black",
                                     textAlign: "center",
                                   }}
-                                >
-                                  {this.echoClasses(pupil.clas).class_number} -
+                                > {item.clas}
+                                  {/* {this.echoClasses(pupil.clas).class_number} -
                                   "{this.echoClasses(pupil.clas).class_char}"
-                                  sinf
+                                  sinf */}
                                 </p>
                               </div>
                             </Col>

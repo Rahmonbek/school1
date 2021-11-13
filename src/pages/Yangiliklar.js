@@ -265,7 +265,7 @@ export default class Yangiliklar extends Component {
          <div className={style.comp}>
 
           <img src={ this.state.school !== null && this.state.school.m_h_h4 !== null
-                  ? this.state.school.m_h_h4
+                  ?  this.state.school.m_h_h4
                   : school1}/>
               
    
@@ -328,7 +328,7 @@ data-aos="fade-bottom"
                       <img
                         src={this.state.news[this.state.id].image}
                         alt="Foto lavha"
-                      />
+                      /> 
                       <h3>{this.state.news[this.state.id].title}</h3>
 
                       <p className={styles.date1}>
