@@ -43,14 +43,13 @@ export default class BoshSahifaDavomi extends Component {
             if(val.school==res.data.id) arrayOfExcellent.push(val)
           })
           this.setState({
-            excellent: arrayOfExcellent,
+            excellent: arrayOfExcellent.slice(0, 2),
             loader: false,
           });
           /* ${idMaktab} */
-          console.log('Mana ular...', res1.data);
         })
         .catch((err) => {
-          console.log('err');
+          
           this.setState({
             // excellent: res.data,
             loader: false,
@@ -67,7 +66,7 @@ export default class BoshSahifaDavomi extends Component {
         });
       })
       .catch((err) => {
-        console.log(err);
+      
         this.setState({ loader: false });
       });
   };
