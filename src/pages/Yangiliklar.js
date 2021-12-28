@@ -1,10 +1,4 @@
 import React, { Component } from "react";
-import yangilik1 from "../img/yangilik1.jpg";
-import yangilik2 from "../img/yangilik2.jpg";
-import new1 from "../img/new1.jpg";
-import new2 from "../img/new2.jpg";
-import new3 from "../img/new3.jpg";
-import new4 from "../img/new4.jpg";
 import styles from "../css/yangiliklar.module.css";
 // import Carousel from "react-multi-carousel";
 // import "react-multi-carousel/lib/styles.css";
@@ -27,20 +21,13 @@ import { url, user } from "../host/Host";
 // import { Link } from "react-router-dom";
 import { getNews } from "../host/Config";
 import FadeLoader from "react-spinners/FadeLoader";
-import { Carousel } from "antd";
 import { Link, NavLink } from "react-router-dom";
 import { Button,Nav, Navbar,} from "react-bootstrap";
 import { Tooltip} from "antd";
 import school1 from "../img/school1.jpg";
 import {
-  faDoorOpen,
   faEnvelope,
-  faNewspaper,
   faPhone,
-  faSchool,
-  faSearch,
-  faSignInAlt,
-  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

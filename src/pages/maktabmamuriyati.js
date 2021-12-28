@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import styles from "../css/maktabmamuriyati.module.css";
-// import Car from "react-multi-Car";
-// import "react-multi-carousel/lib/styles.css";
 
 import school1 from "../img/school19.jpg";
 
@@ -9,7 +7,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBRow, MDBCol } from 'mdb-react-ui-kit';
 import Aos from "aos";
 import "aos/dist/aos.css";
-// import {FadeLoader} from 'react-spinners'
 
 import axios from "axios";
 import { url, user } from "../host/Host";
@@ -19,17 +16,11 @@ import { FadeLoader } from "react-spinners";
 import { Tooltip } from "antd";
 import { Nav, Navbar } from "react-bootstrap";
 import {NavLink} from 'react-router-dom'
-// import school1 from "../img/school1.jpg";
 import {
-  faDoorOpen,
+ 
   faEnvelope,
-  faNewspaper,
   faPhone,
-  faSchool,
-  faSearch,
-  faSignInAlt,
-  faUserCircle,
-} from "@fortawesome/free-solid-svg-icons";
+ } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

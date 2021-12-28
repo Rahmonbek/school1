@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import ParentCabinet from "./pages/ParentCabinet";
+// import ParentCabinet from "./pages/ParentCabinet";
 import MaktabHayoti from "./pages/MaktabHayoti";
 import BoshSahifa from "./pages/BoshSahifa";
 import Qabul from "./pages/Qabul";
 import Yangiliklar from "./pages/Yangiliklar";
-import MaktabOshxonasi from "./pages/MaktabOshxonasi";
+// import MaktabOshxonasi from "./pages/MaktabOshxonasi";
 import "./App.css";
 import "./head.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -16,8 +16,8 @@ import NavBar from "./pages/Navbar";
 import Footer from "./pages/Footer";
 import Error from "./pages/Error";
 import Tadbirlar from "./pages/Tadbirlar";
-import TeacherCabinet from "./pages/TeacherCabinet";
-import Main from "./pages/Rahbar/Main";
+// import TeacherCabinet from "./pages/TeacherCabinet";
+// import Main from "./pages/Rahbar/Main";
 import Maktabmamuriyati from "./pages/maktabmamuriyati";
 import MaktabTadbirlari from "./pages/MaktabTadbirlari";
 import Register from "./pages/Login/Register";
@@ -74,13 +74,13 @@ export default class App extends Component {
               {/* <Route path="/cabinet/parents/">
               <ParentCabinet />
             </Route> */}
-              <Route path="/cabinet/teacher/bolim/">
+              {/* <Route path="/cabinet/teacher/bolim/">
                 <TeacherCabinet />
-              </Route>
+              </Route> */}
 
-              <Route path="/cabinet/teacher/rahbar/">
+              {/* <Route path="/cabinet/teacher/rahbar/">
                 <Main />
-              </Route>
+              </Route> */}
 
               <Route exact path="/qabul/">
                 {/* <NavBar /> */}
@@ -117,18 +117,18 @@ export default class App extends Component {
                 <Gallery />
                 <Footer />
               </Route>
-
+{/* 
               <Route exact path="/yutuqlar/">
                 <NavBar />
                 <Yutuqlarimiz />
                 <Footer />
-              </Route>
+              </Route> */}
 
-              <Route exact path="/maktaboshxonasi/">
+              {/* <Route exact path="/maktaboshxonasi/">
                 <NavBar />
                 <MaktabOshxonasi />
                 <Footer />
-              </Route>
+              </Route> */}
               <Route exact path="/tadbirlar/">
                 <NavBar />
                 <Tadbirlar />

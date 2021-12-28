@@ -19,12 +19,7 @@ import school1 from "../img/school1.jpg";
 import {
   faDoorOpen,
   faEnvelope,
-  faNewspaper,
   faPhone,
-  faSchool,
-  faSearch,
-  faSignInAlt,
-  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

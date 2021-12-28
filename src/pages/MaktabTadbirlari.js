@@ -23,15 +23,12 @@ import {
   Map,
   Placemark,
   RouteButton,
-  TrafficControl,
-  TypeSelector,
+ 
   YMaps,
   ZoomControl,
 } from "react-yandex-maps";
 import "react-multi-carousel/lib/styles.css";
-import rasm3 from "../img/13.jpg";
 import Carousel from "react-multi-carousel";
-import { Tooltip } from "antd";
 
 import {
   faClock,

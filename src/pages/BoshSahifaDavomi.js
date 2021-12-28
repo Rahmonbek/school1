@@ -2,22 +2,15 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import style from "./BoshSahifaDavomi.module.css";
 import { ButtonWrapper } from "./StyleBoshSahifa";
-import school1 from "../img/school1.jpg";
 import ustoz1 from "../img/ustoz1.jpg";
 import ustoz2 from "../img/ustoz2.jpg";
 import school2 from "../img/school2.jpg";
-import school3 from "../img/school3.jpg";
-import school4 from "../img/school4.jpg";
-import school5 from "../img/school5.jpg";
 import axios from "axios";
 import Aos from "aos";
-import styles from "../css/alochilar.module.css";
 
 import { getExcellent, getPupil } from "../host/Config";
 
 import { idMaktab, url, user } from "../host/Host";
-import Global from "../host/Global";
-// import {Map} from './Map'
 export default class BoshSahifaDavomi extends Component {
   state = {
     loader: true,

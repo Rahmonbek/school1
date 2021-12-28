@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import styles from "../css/maktabHayoti.module.css";
 import "../css/maktahayotiAli.css";
 import { Container, Row, Col, Image } from "react-bootstrap";
-import { Carousel } from "antd";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import school2 from "../img/school2.jpg";
-import school3 from "../img/school3.jpg";
 import school4 from "../img/school4.jpg";
 import school5 from "../img/school5.jpg";
 import school7 from "../img/school7.jpg";
@@ -21,8 +19,6 @@ import school1 from "../img/school1.jpg";
 
 import style from "./BoshSahifa.module.css";
 
-// import { Link } from "react-router-dom";
-import { DownCircleOutlined } from "@ant-design/icons";
 import { BiStop, BiRightArrowAlt } from "react-icons/bi";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -30,14 +26,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Button, Nav, Navbar } from "react-bootstrap";
 
 import {
-  faDoorOpen,
   faEnvelope,
-  faNewspaper,
   faPhone,
-  faSchool,
-  faSearch,
-  faSignInAlt,
-  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,7 +38,6 @@ import axios from "axios";
 import { Pannellum } from "pannellum-react";
 import myImage from "../img/360.jpeg";
 
-import Global from "../host/Global";
 import { url, user } from "../host/Host";
 
 export default class MaktabHayoti extends Component {
