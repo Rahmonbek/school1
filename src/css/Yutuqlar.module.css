@@ -1,9 +1,20 @@
-.yutuq{padding:40px}
-.card{ position:relative; height:300px; width:100%;  overflow:hidden;}
-.image{width:100%; height:300px;position:relative;  top:0px; left:0px;}
-.cardBody{background:linear-gradient(to top, black, rgba(8, 8, 8, 0.159)); transition: 0.5s; z-index: 34;  padding:10px; 
-    position:absolute; top:220px;  height:80px;  color:white;  overflow: hidden;}
-.cardBody h3{color:white; width:80%; position: relative; font-size: 23px;}
-.cardBody >h3>img{width:40px; height:50px; position: absolute; right:-70px; top:-5px;}
-.cardBody:hover{top:70px; height:230px; background:linear-gradient(to top, black, rgba(8, 8, 8, 0.378));}
+.yutuqlar{
+    width:100%;
+    padding:70px 0px;
 
+}
+.yutuq{
+    background: linear-gradient(to top,
+    rgba(72, 142, 247, 0.727),
+    rgba(3, 52, 177, 0.885),
+    rgb(5, 47, 138),
+    rgb(3, 25, 99)
+  );
+  padding:30px;
+  color:white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.yutuq img{width:90%; transition: 1s;}
+.yutuq h4, .yutuq h5{color:white}
+.yutuq:hover img{transform:scale(1.1, 1.1)}

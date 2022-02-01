@@ -60,7 +60,7 @@ export default class Yangiliklar extends Component {
       .then((res) => {
         if (window.location.href.indexOf("id=") === -1) {
           this.setState({
-            news: res.data,
+            news: res.data.reverse(),
          
           });
         } else {

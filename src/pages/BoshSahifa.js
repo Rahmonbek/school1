@@ -127,7 +127,7 @@ export default class BoshSahifa extends Component {
                   title={`${
                     this.state.school !== null
                       ? this.state.school.email
-                      : "5maktabjizzax@gmail.com"
+                      : ""
                   }`}
                 >
                   {" "}
@@ -138,7 +138,7 @@ export default class BoshSahifa extends Component {
                     href={`mailto: ${
                       this.state.school !== null
                         ? this.state.school.email
-                        : "5maktabjizzax@gmail.com"
+                        : ""
                     }`}
                   >
                     <FontAwesomeIcon

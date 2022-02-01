@@ -43,14 +43,14 @@ export default class Alochilar extends Component {
             if(val.school==res.data.id) arrayOfExcellent.push(val)
           })
           this.setState({
-            excellent: arrayOfExcellent,
+            excellent: arrayOfExcellent.reverse(),
             loader: false,
           });
           /* ${idMaktab} */
-          console.log('Mana ular...', res1.data);
+        
         })
         .catch((err) => {
-          console.log('err');
+        
           this.setState({
             // excellent: res.data,
             loader: false,
@@ -65,7 +65,7 @@ export default class Alochilar extends Component {
         });
       })
       .catch((err) => {
-        console.log('err');
+       
         // this.setState({loader:false})
       });
   };

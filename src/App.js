@@ -117,18 +117,14 @@ export default class App extends Component {
                 <Gallery />
                 <Footer />
               </Route>
-{/* 
+
               <Route exact path="/yutuqlar/">
-                <NavBar />
+                {/* <NavBar /> */}
                 <Yutuqlarimiz />
                 <Footer />
-              </Route> */}
+              </Route>
 
-              {/* <Route exact path="/maktaboshxonasi/">
-                <NavBar />
-                <MaktabOshxonasi />
-                <Footer />
-              </Route> */}
+            
               <Route exact path="/tadbirlar/">
                 <NavBar />
                 <Tadbirlar />

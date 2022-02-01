@@ -47,14 +47,14 @@ export default class MaktabTadbirlari extends Component {
   getEvents = () => {
     getEvents()
       .then((res) => {
-        console.log(res.data);
+      
         if (window.location.href.indexOf("id=") === -1) {
           this.setState({
-            events: res.data,
+            events: res.data.reverse(),
           });
         } else {
           this.setState({
-            events: res.data,
+            events: res.data.reverse(),
             id: window.location.href.slice(
               window.location.href.indexOf("=") + 1
             ),
