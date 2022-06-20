@@ -19,7 +19,6 @@ export default class Gallery extends Component {
     loader: true,
   };
   getSchool = () => {
-    
     var v = user;
     axios
       .get(`${url}/school-by-admin/${v}`)
@@ -54,18 +53,7 @@ export default class Gallery extends Component {
           <div className={style.mat}>
             <br />
             <div className={style.header}>
-              <img
-                className={style.headerImgItem}
-                alt=" "
-                src={
-                  Xorazm
-                  
-                  
-                  
-                  
-                  
-                }
-              />
+              <img className={style.headerImgItem} alt=" " src={Xorazm} />
               <div className={style.sarlavha}>
                 <h2>Bizning Fotogalareya</h2>
                 <h1>Maktabimiz hayotidan fotolavhalar</h1>
@@ -76,46 +64,100 @@ export default class Gallery extends Component {
               <Row style={{ justifyContent: "center" }}>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img src={img1} className="img-fluid" />
-                   
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto !== null
+                            ? this.state.school.foto
+                            : img1
+                          : img1
+                      }
+                      className="img-fluid"
+                    />
                   </div>{" "}
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img src={img2} className="img-fluid" />
-
-                   
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto1 !== null
+                            ? this.state.school.foto1
+                            : img2
+                          : img2
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img src={img3} className="img-fluid" />
-                    
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto2 !== null
+                            ? this.state.school.foto2
+                            : img3
+                          : img3
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img src={img4} className="img-fluid" />
-
-                   
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto3 !== null
+                            ? this.state.school.foto3
+                            : img4
+                          : img4
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
                 <Col lg={6} md={6} cm={12}>
                   <div class={style.imagewrapper}>
-                   
-                    <img src={img5} className="img-fluid" />
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto4 !== null
+                            ? this.state.school.foto4
+                            : img5
+                          : img5
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
                 <Col lg={6} md={12} cm={12}>
                   <div class={style.imagewrapper}>
-                   
-                    <img src={img6} className="img-fluid" />
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto5 !== null
+                            ? this.state.school.foto5
+                            : img6
+                          : img6
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
                 <Col lg={6} md={12} cm={12}>
                   <div class={style.imagewrapper}>
-                    <img src={img7} className="img-fluid" />
-                   
+                    <img
+                      src={
+                        this.state.school !== null
+                          ? this.state.school.foto6 !== null
+                            ? this.state.school.foto6
+                            : img7
+                          : img7
+                      }
+                      className="img-fluid"
+                    />
                   </div>
                 </Col>
               </Row>
