@@ -17,6 +17,7 @@ export default class BoshSahifaDavomi extends Component {
     excellent: [],
     pupil: [],
     pupils: [],
+    teachers: [],
     data: null,
     id: 0,
     school: null,
@@ -26,15 +27,15 @@ export default class BoshSahifaDavomi extends Component {
   getExcellents = () => {
     // var a = window.location.href.split("/");
     var v = user;
-    
+
     axios.get(`${url}/school-by-admin/${v}/`).then((res) => {
       axios
         .get(`${url}/excellent/`)
         .then((res1) => {
-          let arrayOfExcellent=[]
-          res1.data.forEach(val=>{
-            if(val.school==res.data.id) arrayOfExcellent.push(val)
-          })
+          let arrayOfExcellent = [];
+          res1.data.forEach((val) => {
+            if (val.school == res.data.id) arrayOfExcellent.push(val);
+          });
           this.setState({
             excellent: arrayOfExcellent.slice(0, 2),
             loader: false,
@@ -42,7 +43,6 @@ export default class BoshSahifaDavomi extends Component {
           /* ${idMaktab} */
         })
         .catch((err) => {
-          
           this.setState({
             // excellent: res.data,
             loader: false,
@@ -59,7 +59,6 @@ export default class BoshSahifaDavomi extends Component {
         });
       })
       .catch((err) => {
-      
         this.setState({ loader: false });
       });
   };
@@ -73,7 +72,17 @@ export default class BoshSahifaDavomi extends Component {
       })
       .catch((err) => console.log(err));
   };
-
+  getTeacher = () => {
+    axios
+      .get(`${url}/achieve-teacher-by-school/${idMaktab}/`)
+      .then((res) => {
+        console.log(res.data);
+        this.setState({
+          teachers: res.data,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   setPupils = (id) => {
     var pupil = {};
     if (this.state.pupils !== []) {
@@ -104,8 +113,9 @@ export default class BoshSahifaDavomi extends Component {
     });
     this.getExcellents();
     this.getPupil();
+    this.getTeacher();
     this.setState({ loader: false });
-    console.log(123);
+    // console.log(123);
   }
 
   render() {
@@ -192,7 +202,9 @@ export default class BoshSahifaDavomi extends Component {
                                     color: "black",
                                     textAlign: "center",
                                   }}
-                                > {item.clas}
+                                >
+                                  {" "}
+                                  {item.clas}
                                   {/* {this.echoClasses(pupil.clas).class_number} -
                                   "{this.echoClasses(pupil.clas).class_char}"
                                   sinf */}
@@ -244,88 +256,53 @@ export default class BoshSahifaDavomi extends Component {
                   {/* <div className={style.line}></div> */}
                   <br />
                   <Row>
-                    <Col lg={12} md={12} sm={12}>
-                      <div style={{ padding: "10px" }}>
-                        <div className={style.card}>
-                          <div className={style.bayroq}></div>
-                          <Row>
-                            <Col lg={5}>
-                              <img src={ustoz1} alt="" />
-                            </Col>
-                            <Col lg={7}>
-                              <p
-                                style={{
-                                  // fontSize: "20px",
-                                  marginTop: "20px",
-                                  marginLeft: "20px",
-                                  fontWeight: "bold",
-                                  color: "black",
-                                  width: "80%",
-                                }}
-                              >
-                                Muxlisova Munisa Mahmudovna
-                              </p>
+                    {this.state.teachers.length !== 0
+                      ? this.state.teachers.map((item) => {
+                          return (
+                            <Col lg={12} md={12} sm={12}>
+                              <div style={{ padding: "10px" }}>
+                                <div className={style.card}>
+                                  <div className={style.bayroq}></div>
+                                  <Row>
+                                    <Col lg={5}>
+                                      <img src={item.image} alt="" />
+                                    </Col>
+                                    <Col lg={7}>
+                                      <p
+                                        style={{
+                                          // fontSize: "20px",
+                                          marginTop: "20px",
+                                          marginLeft: "20px",
+                                          fontWeight: "bold",
+                                          color: "black",
+                                          width: "80%",
+                                        }}
+                                      >
+                                        {item.full_name}
+                                      </p>
 
-                              <p
-                                style={{
-                                  // fontSize: "18px",
-                                  color: "black",
-                                  marginLeft: "20px",
-                                }}
-                              >
-                                Ingliz tili o'qituvchisi
-                              </p>
+                                      <p
+                                        style={{
+                                          // fontSize: "18px",
+                                          color: "black",
+                                          marginLeft: "20px",
+                                        }}
+                                      >
+                                        {item.position}
+                                      </p>
 
-                              {/* <div style={{ cursor: "pointer" }}>Baholarini ko'rish</div> */}
+                                      {/* <div style={{ cursor: "pointer" }}>Baholarini ko'rish</div> */}
+                                    </Col>
+                                  </Row>
+                                  {/* <p style={{fontSize:'18px', color:'black'}}>Ko'plab ko'rik tanlovlarda erishgan yuqori natijalari bilan maktabimiz nomini yuqori darajaga yetkazgan. Fanlar bo'yicha o'zlashtirishi, odob axloqi va maktabimizda o'tkaziladigan tadbirlarda faol ishtiroki bilan maktabimiz o'quvchilaridan ajralib turadi. 
+     Maktabimizning barcha o'qituvchilari bu o'quvchimizning o'zlashtirish darajasidan mamnun. Biz bunday yoshlarimiz bilan faxrlanamiz !!!
+ </p> */}
+                                </div>
+                              </div>
                             </Col>
-                          </Row>
-                          {/* <p style={{fontSize:'18px', color:'black'}}>Ko'plab ko'rik tanlovlarda erishgan yuqori natijalari bilan maktabimiz nomini yuqori darajaga yetkazgan. Fanlar bo'yicha o'zlashtirishi, odob axloqi va maktabimizda o'tkaziladigan tadbirlarda faol ishtiroki bilan maktabimiz o'quvchilaridan ajralib turadi. 
-                           Maktabimizning barcha o'qituvchilari bu o'quvchimizning o'zlashtirish darajasidan mamnun. Biz bunday yoshlarimiz bilan faxrlanamiz !!!
-                       </p> */}
-                        </div>
-                      </div>
-                    </Col>
-                    <Col lg={12} md={12} sm={12}>
-                      <div style={{ padding: "10px" }}>
-                        <div className={style.card}>
-                          <div className={style.bayroq}></div>
-                          <Row>
-                            <Col lg={5}>
-                              <img src={ustoz2} alt="" />
-                            </Col>
-                            <Col lg={7}>
-                              <p
-                                style={{
-                                  // fontSize: "20px",
-                                  marginTop: "20px",
-                                  marginLeft: "20px",
-                                  fontWeight: "bold",
-                                  color: "black",
-                                  width: "80%",
-                                }}
-                              >
-                                Hamidova Shahnoza Elmurodovna
-                              </p>
-
-                              <p
-                                style={{
-                                  // fontSize: "18px",
-                                  color: "black",
-                                  marginLeft: "20px",
-                                }}
-                              >
-                                Ona tili o'qituvchisi
-                              </p>
-
-                              {/* <div style={{ cursor: "pointer" }}>Baholarini ko'rish</div> */}
-                            </Col>
-                          </Row>
-                          {/* <p style={{fontSize:'18px', color:'black'}}>Ko'plab ko'rik tanlovlarda erishgan yuqori natijalari bilan maktabimiz nomini yuqori darajaga yetkazgan. Fanlar bo'yicha o'zlashtirishi, odob axloqi va maktabimizda o'tkaziladigan tadbirlarda faol ishtiroki bilan maktabimiz o'quvchilaridan ajralib turadi. 
-                           Maktabimizning barcha o'qituvchilari bu o'quvchimizning o'zlashtirish darajasidan mamnun. Biz bunday yoshlarimiz bilan faxrlanamiz !!!
-                       </p> */}
-                        </div>
-                      </div>
-                    </Col>
+                          );
+                        })
+                      : ""}
                   </Row>
                 </Container>
               </div>

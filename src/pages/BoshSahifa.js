@@ -41,18 +41,18 @@ export default class BoshSahifa extends Component {
     id: 0,
     school: null,
     clock: "00 : 00 : 00",
-    region:null
+    region: null,
   };
   getSchool = () => {
     axios.get(`${url}/school-by-admin/${Global.user}`).then((res) => {
       this.setState({
         school: res.data,
       });
-      axios.get(`${url}/region/${res.data.region}`).then(res1=>{
+      axios.get(`${url}/region/${res.data.region}`).then((res1) => {
         this.setState({
-          region:res1.data
-        })
-      })
+          region: res1.data,
+        });
+      });
       // console.log(res.data)
       setTimeout(() => {
         this.setState({
@@ -125,9 +125,7 @@ export default class BoshSahifa extends Component {
                 <Tooltip
                   placement="left"
                   title={`${
-                    this.state.school !== null
-                      ? this.state.school.email
-                      : ""
+                    this.state.school !== null ? this.state.school.email : ""
                   }`}
                 >
                   {" "}
@@ -136,9 +134,7 @@ export default class BoshSahifa extends Component {
                     style={{ borderRadius: "10px 0px 0px 0px" }}
                     className="ahref"
                     href={`mailto: ${
-                      this.state.school !== null
-                        ? this.state.school.email
-                        : ""
+                      this.state.school !== null ? this.state.school.email : ""
                     }`}
                   >
                     <FontAwesomeIcon
@@ -153,7 +149,9 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href={this.state.school!==null?this.state.school.telegram:""}
+                  href={
+                    this.state.school !== null ? this.state.school.telegram : ""
+                  }
                 >
                   <i className="fab fa-telegram"></i>
                 </a>
@@ -163,7 +161,11 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href={this.state.school!==null?this.state.school.instagram:""}
+                  href={
+                    this.state.school !== null
+                      ? this.state.school.instagram
+                      : ""
+                  }
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
@@ -173,7 +175,9 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href={this.state.school!==null?this.state.school.facebook:""}
+                  href={
+                    this.state.school !== null ? this.state.school.facebook : ""
+                  }
                 >
                   <i className="fab fa-facebook"></i>
                 </a>
@@ -183,13 +187,15 @@ export default class BoshSahifa extends Component {
                   target="_blank"
                   style={{ borderTop: " 1px solid #1b6602" }}
                   className="ahref"
-                  href={this.state.school!==null?this.state.school.youtube:""}
+                  href={
+                    this.state.school !== null ? this.state.school.youtube : ""
+                  }
                 >
                   <i className="fab fa-youtube"></i>
                 </a>
               </div>
               <div>
-                <Tooltip placement="left" title="+998 97 790 28 01">
+                <Tooltip placement="left" title="+998 97 790 28 011">
                   {" "}
                   <a
                     target="_blank"
@@ -257,15 +263,31 @@ export default class BoshSahifa extends Component {
               </div>
               <Container className={style.CentreMenuGroup}>
                 <Row className={style.CentreMenuItemRow}>
-                  
                   <Col lg={5} md={5} sm={12} className={style.head_textCol}>
                     {/* <p>Sifat va qulay narxlar</p> */}
                     <h1>
-                    {this.state.region!==null?this.state.region.address:''} {this.state.region!==null?this.state.region.region_name:''} tumani <br/> {this.state.school!==null?this.state.school.school_number:''} - {this.state.school!==null?this.state.school.type:''}
-
+                      {this.state.region !== null
+                        ? this.state.region.address
+                        : ""}{" "}
+                      {this.state.region !== null
+                        ? this.state.region.region_name
+                        : ""}{" "}
+                      tumani <br />{" "}
+                      {this.state.school !== null
+                        ? this.state.school.school_number
+                        : ""}{" "}
+                      -{" "}
+                      {this.state.school !== null ? this.state.school.type : ""}
                     </h1>
 
-                    <a target="_blank" href={`tel: ${this.state.school.phone}`}>
+                    <a
+                      target="_blank"
+                      href={`tel: ${
+                        this.state.school.phone
+                          ? this.state.school.phone
+                          : "+998990654242"
+                      }`}
+                    >
                       Biz bilan bog'laning
                     </a>
                   </Col>
@@ -525,7 +547,7 @@ export default class BoshSahifa extends Component {
                 </Col>
               </Row>
             </div>
-            <Darsliklar/>
+            <Darsliklar />
             <BoshSahifaDavomi />
             <MaktabTadbirlari />
             <Footer />
